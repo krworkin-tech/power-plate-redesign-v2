@@ -1,4 +1,4 @@
-// Power Plate — Classic direction
+// Power Plate, Classic direction
 (() => {
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];

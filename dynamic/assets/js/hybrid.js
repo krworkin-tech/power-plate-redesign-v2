@@ -1,4 +1,4 @@
-/* Power Plate — Hybrid (A + B) interactions
+/* Power Plate | Dynamic (A + B) interactions
    Standalone: Direction A's main.js and Direction B's direction-b.js stay untouched.
    B behaviour: nav, Wave hero, pillar panels, one second, proof wall, science, closing, footer.
    A behaviour: statement, goals tabs, guided finder, everyday horizontal scroll. */
@@ -17,7 +17,7 @@
   const hero = $('.hero');
 
   /* ------------------------------------------------------------------
-     Product data — names, specs and prices mirror powerplate.com
+     Product data, names, specs and prices mirror powerplate.com
      ------------------------------------------------------------------ */
   const PRODUCTS = {
     personal: { name: 'Personal Power Plate®', tag: 'Most compact', desc: 'Gold-standard vibration in our smallest plate.', specs: ['Set 35Hz frequency', '30- or 60-second timer', 'Column-free, with travel case'], price: 1836, was: 2295, img: 'files/Personal_0fdfee51-d763-4d38-9eb6-26127b59cf2a.png', url: 'personal-power-plate' },
@@ -93,7 +93,7 @@
   addEventListener('keydown', e => { if (e.key === 'Escape' && !menu.hidden) closeMenu(); });
 
   /* ------------------------------------------------------------------
-     Hero video (Wave) — autoplay when allowed, always pausable
+     Hero video (Wave), autoplay when allowed, always pausable
      ------------------------------------------------------------------ */
   const videos = $$('video[data-autoplay]', hero);
   const toggle = $('[data-video-toggle]', hero);
@@ -169,7 +169,7 @@
   }
 
   /* ------------------------------------------------------------------
-     Why Power Plate — statement words, photo cycle, expanding panels
+     Why Power Plate, statement words, photo cycle, expanding panels
      ------------------------------------------------------------------ */
   const statement = $('[data-reveal-words]');
   if (statement) {
@@ -369,7 +369,7 @@
   renderProducts(false);
 
   /* ------------------------------------------------------------------
-     Proof wall — seamless loop. Rows alternate photo / quote and each group has an
+     Proof wall, seamless loop. Rows alternate photo / quote and each group has an
      even count, so the rhythm holds across the loop seam. Two copies follow each
      group so a short row never runs out on wide screens.
      ------------------------------------------------------------------ */
@@ -405,7 +405,7 @@
   }
 
   /* ------------------------------------------------------------------
-     Motion (GSAP) — enhancement only
+     Motion (GSAP), enhancement only
      ------------------------------------------------------------------ */
   const mm = gsap.matchMedia();
 
@@ -434,7 +434,7 @@
   }
   gsap.from('.b-panel', { opacity: 0, y: 40, duration: 1, stagger: .08, ease: 'expo.out', scrollTrigger: { trigger: '[data-b-panels]', start: 'top 85%', once: true } });
 
-  // Inside one second — pinned: the counter climbs to 50 and the rings speed up with it
+  // Inside one second, pinned: the counter climbs to 50 and the rings speed up with it
   const rings = $$('[data-b-ring]');
   const setRingSpeed = rate => rings.forEach(r => r.getAnimations().forEach(a => { a.playbackRate = rate; }));
   const setStepState = p => {
@@ -464,7 +464,7 @@
   gsap.from('.goal', { opacity: 0, y: 40, duration: 1, ease: 'expo.out', scrollTrigger: { trigger: '.goal', start: 'top 85%', once: true } });
   gsap.from('.finder, .products', { opacity: 0, y: 32, duration: 1, stagger: .1, ease: 'expo.out', scrollTrigger: { trigger: '.finder', start: 'top 85%', once: true } });
 
-  // Everyday — pinned horizontal scroll on desktop
+  // Everyday, pinned horizontal scroll on desktop
   mm.add('(min-width: 761px)', () => {
     const pinEl = $('.everyday__pin');
     const track = $('[data-hscroll-track]');

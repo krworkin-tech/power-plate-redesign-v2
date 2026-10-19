@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Power Plate — Homepage concept (v2)
+   Power Plate, Homepage concept (v2)
    Tokens → base → components → heroes → sections → responsive → motion
    Spacing: strict 4/8px grid via --sp-* tokens. Type: even sizes only, nothing below 16px.
    ========================================================================== */
@@ -41,12 +41,12 @@
   /* Type */
   --f-display: "Poppins", system-ui, sans-serif;
   --f-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --fs-sm: 16px;   /* minimum size used anywhere — even sizes only */
+  --fs-sm: 16px;   /* minimum size used anywhere, even sizes only */
   --fs-base: 16px;
   --fs-body: 16px;
   --fs-lg: 18px;
 
-  /* Spacing — 4/8px grid */
+  /* Spacing, 4/8px grid */
   --sp-1: 4px;
   --sp-2: 8px;
   --sp-3: 12px;
@@ -364,7 +364,7 @@ html:not([data-hero]) .hero--film { display: flex; }
 .st__product-name span { font: 400 var(--fs-base)/1.4 var(--f-body); color: var(--on-dark-2); font-variant-numeric: tabular-nums; }
 .st__product-name s { color: rgba(245, 245, 247, .45); margin-left: var(--sp-2); }
 
-/* Floor rings — anchored to the measured base footprint of each product render */
+/* Floor rings, anchored to the measured base footprint of each product render */
 .floor {
   position: absolute; z-index: 0; pointer-events: none;
   left: calc(var(--bx) * 100%); top: calc(var(--by) * 100%);
@@ -389,7 +389,7 @@ html:not([data-hero]) .hero--film { display: flex; }
 .w4__circle { position: absolute; inset: 0; z-index: 1; border-radius: 50%; overflow: hidden; box-shadow: 0 0 0 1px rgba(255, 255, 255, .14), 0 40px 120px -40px rgba(234, 25, 71, .7); }
 .w4__hz { position: absolute; z-index: 2; left: 50%; bottom: calc(var(--sp-6) * -1); translate: -50% 0; min-height: 44px; display: inline-flex; align-items: center; gap: var(--sp-1); padding: 0 var(--sp-5); border-radius: 999px; background: rgba(20, 22, 26, .72); border: 1px solid rgba(255, 255, 255, .16); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); font: 500 var(--fs-base)/1 var(--f-display); font-variant-numeric: tabular-nums; }
 
-/* Shared horizontal arcs (hero 4 + closing) — echo the brand's own wave loop */
+/* Shared horizontal arcs (hero 4 + closing), echo the brand's own wave loop */
 .arcs { overflow: visible; pointer-events: none; }
 .w4__orb .arcs { position: absolute; z-index: 0; left: 50%; top: 50%; width: 325%; height: 125%; translate: -50% -50%; -webkit-mask-image: linear-gradient(90deg, transparent 22%, #000 40%); mask-image: linear-gradient(90deg, transparent 22%, #000 40%); }
 .arcs path {
@@ -803,7 +803,7 @@ html[data-footer="2"] .footer { display: none; }
 .xf__top:hover svg { translate: 0 -3px; }
 
 /* ==========================================================================
-   Responsive — rhythm tokens step down, always on the 4/8 grid
+   Responsive, rhythm tokens step down, always on the 4/8 grid
    ========================================================================== */
 @media (max-width: 1280px) {
   .products { grid-template-columns: repeat(2, minmax(0, 1fr)); }
