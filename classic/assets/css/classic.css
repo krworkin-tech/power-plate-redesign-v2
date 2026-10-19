@@ -486,6 +486,41 @@ body.quiz-open { overflow: hidden; }
 .quiz__links button:first-child { color: var(--grey); }
 .quiz__links button:hover { text-decoration: underline; text-underline-offset: 3px; }
 
+/* Basket count, toast, added state */
+.basket { position: relative; display: block; }
+.basket__count {
+  position: absolute; top: -8px; right: -10px; min-width: 20px; height: 20px; padding: 0 6px; border-radius: 999px;
+  background: var(--red); color: var(--white); font-size: 12px; line-height: 20px; font-weight: 600; text-align: center;
+}
+.basket__count[hidden] { display: none; }
+.basket__count.is-bump { animation: bump .35s cubic-bezier(.3, 1.6, .5, 1); }
+@keyframes bump { 0% { transform: scale(.6); } 100% { transform: none; } }
+.btn.is-added { background: var(--black); border-color: var(--black); color: var(--white); }
+.toast {
+  position: fixed; z-index: 70; left: 50%; bottom: 24px; max-width: calc(100% - 32px); padding: 14px 22px; border-radius: 999px;
+  background: var(--black); color: var(--white); font-size: 16px; line-height: 22px; box-shadow: 0 12px 30px rgba(0, 0, 0, .25);
+  opacity: 0; transform: translate(-50%, 12px); transition: opacity .25s ease, transform .25s ease; pointer-events: none;
+}
+.toast[hidden] { display: none; }
+.toast.is-in { opacity: 1; transform: translate(-50%, 0); }
+
+/* Pulsing play buttons: a soft ring ripples out every 2s */
+.hero__watch img, .science__play img, .doctor__play { border-radius: 50%; animation: pulse-red 2s ease-out infinite; }
+.hero__watch img { animation-name: pulse-white; }
+@keyframes pulse-red { 0% { box-shadow: 0 0 0 0 rgba(234, 25, 71, .55); } 70%, 100% { box-shadow: 0 0 0 16px rgba(234, 25, 71, 0); } }
+@keyframes pulse-white { 0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, .45); } 70%, 100% { box-shadow: 0 0 0 14px rgba(255, 255, 255, 0); } }
+.hero__watch:hover img, .science__play:hover img, .doctor__video:hover .doctor__play { animation-play-state: paused; }
+
+/* Scroll reveal (class added by JS only) */
+.js-reveal .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease var(--d, 0ms), transform .6s cubic-bezier(.2, .8, .2, 1) var(--d, 0ms); }
+.js-reveal .reveal.is-in { opacity: 1; transform: none; }
+
+/* Hover lift on cards that lead somewhere */
+.goal, .split__card, .doctor__video { transition: transform .3s ease, box-shadow .3s ease; }
+.goal:hover, .split__card:hover { box-shadow: 0 20px 40px rgba(16, 24, 32, .18); }
+.quote { transition: background-color .2s ease; }
+.quote:hover { background: #efede9; }
+
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 @media (max-width: 1000px) {

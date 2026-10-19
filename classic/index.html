@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Jost:wght@400&display=swap">
-<link rel="stylesheet" href="assets/css/classic.css?v=202610191723">
+<link rel="stylesheet" href="assets/css/classic.css?v=202610191724">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -32,7 +32,7 @@
   </nav>
   <div class="header__actions">
     <a class="btn btn--outline header__shop" href="#bestsellers">Shop now</a>
-    <a class="icon-link" href="#" aria-label="Basket"><img src="assets/img/icon-basket.svg" width="24" height="24" alt=""></a>
+    <a class="icon-link basket" href="#" aria-label="Basket, 0 items" data-basket><img src="assets/img/icon-basket.svg" width="24" height="24" alt=""><span class="basket__count" aria-hidden="true" hidden data-basket-count>0</span></a>
     <a class="icon-link" href="#" aria-label="Account"><img src="assets/img/icon-account.svg" width="24" height="24" alt=""></a>
     <button class="header__menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav" data-menu>
       <span></span><span></span>
@@ -59,7 +59,7 @@
         <h1 id="hero-title" class="hero__title">Move with more power. Recover with more purpose.</h1>
         <p class="hero__lede">Patented PrecisionWave™ technology makes every movement more effective, in minutes and at home.</p>
         <div class="hero__ctas">
-          <a class="btn btn--red btn--lg" href="#improve">Find your Power Plate</a>
+          <a class="btn btn--red btn--lg" href="#improve" data-quiz-open>Find your Power Plate</a>
           <a class="hero__watch" href="#science"><img src="assets/img/icon-play.svg" width="40" height="40" alt="">Watch how it works</a>
         </div>
         <div class="hero__proof">
@@ -107,7 +107,7 @@
           <p class="product__desc">Compact, for home</p>
           <p class="product__price">$2,295</p>
         </div>
-        <a class="btn btn--outline btn--block" href="#">Shop now</a>
+        <button class="btn btn--outline btn--block" type="button" data-add="Personal Power Plate®">Add to basket</button>
       </li>
       <li class="product">
         <div class="product__media">
@@ -120,7 +120,7 @@
           <p class="product__desc">Whole body, for home</p>
           <p class="product__price">$3,720</p>
         </div>
-        <a class="btn btn--outline btn--block" href="#">Shop now</a>
+        <button class="btn btn--outline btn--block" type="button" data-add="Power Plate® MOVE™">Add to basket</button>
       </li>
       <li class="product">
         <div class="product__media">
@@ -146,7 +146,7 @@
           <p class="product__desc">Targeted recovery</p>
           <p class="product__price">$399</p>
         </div>
-        <a class="btn btn--outline btn--block" href="#">Shop now</a>
+        <button class="btn btn--outline btn--block" type="button" data-add="Power Plate Pulse">Add to basket</button>
       </li>
     </ul>
   </section>
@@ -158,19 +158,19 @@
       <button class="btn btn--dark" type="button" aria-haspopup="dialog" data-quiz-open>Take the 60-second quiz</button>
     </div>
     <ul class="grid-4">
-      <li><a class="goal goal--strength" href="#">
+      <li><a class="goal goal--strength" href="#improve" data-quiz-open data-quiz-goal="strength">
         <span class="goal__media"><img src="assets/img/goal-strength.webp" width="1400" height="946" alt="A woman does a knee drive beside a Power Plate my8" loading="lazy"></span>
         <span class="goal__text"><span class="goal__title">Strength</span><span class="goal__sub">Build power, faster</span></span>
       </a></li>
-      <li><a class="goal" href="#">
+      <li><a class="goal" href="#improve" data-quiz-open data-quiz-goal="recovery">
         <span class="goal__media"><img src="assets/img/goal-recovery.webp" width="1400" height="933" alt="A man uses a Pulse massager while seated on a Power Plate" loading="lazy"></span>
         <span class="goal__text"><span class="goal__title">Recovery</span><span class="goal__sub">Bounce back sooner</span></span>
       </a></li>
-      <li><a class="goal" href="#">
+      <li><a class="goal" href="#improve" data-quiz-open data-quiz-goal="mobility">
         <span class="goal__media"><img src="assets/img/goal-mobility.webp" width="1400" height="1000" alt="A woman holds a side stretch on a Power Plate" loading="lazy"></span>
         <span class="goal__text"><span class="goal__title">Mobility</span><span class="goal__sub">Move with ease</span></span>
       </a></li>
-      <li><a class="goal" href="#">
+      <li><a class="goal" href="#improve" data-quiz-open data-quiz-goal="aging">
         <span class="goal__media"><img src="assets/img/goal-aging.webp" width="1400" height="1000" alt="An older man trains with resistance cables on a Power Plate" loading="lazy"></span>
         <span class="goal__text"><span class="goal__title">Healthy aging</span><span class="goal__sub">Stay strong for life</span></span>
       </a></li>
@@ -462,6 +462,7 @@
   <div class="hertz__log" role="log" aria-live="polite" data-hertz-log></div>
 </section>
 
-<script src="assets/js/classic.js?v=202610191723" defer></script>
+<div class="toast" role="status" aria-live="polite" data-toast hidden></div>
+<script src="assets/js/classic.js?v=202610191724" defer></script>
 </body>
 </html>

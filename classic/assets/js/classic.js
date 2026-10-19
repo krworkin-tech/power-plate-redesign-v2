@@ -22,14 +22,88 @@
   const faq = $('[data-faq]');
   if (faq) {
     const buttons = $$('button[aria-controls]', faq);
+    // Smooth open/close: animate the answer height, then settle on hidden/auto
+    const toggle = (panel, show) => {
+      if (show === !panel.hidden) return;
+      if (reduceMotion) { panel.hidden = !show; return; }
+      panel.getAnimations().forEach(a => a.cancel());
+      panel.hidden = false;
+      const h = panel.scrollHeight;
+      panel.style.overflow = 'hidden';
+      const anim = panel.animate(
+        show ? [{ height: 0, opacity: 0 }, { height: h + 'px', opacity: 1 }] : [{ height: h + 'px', opacity: 1 }, { height: 0, opacity: 0 }],
+        { duration: show ? 280 : 200, easing: 'cubic-bezier(.2, .8, .2, 1)' });
+      anim.onfinish = () => { panel.style.overflow = ''; if (!show) panel.hidden = true; };
+    };
     buttons.forEach(btn => btn.addEventListener('click', () => {
       const open = btn.getAttribute('aria-expanded') !== 'true';
       buttons.forEach(b => {
         const isThis = b === btn;
         b.setAttribute('aria-expanded', String(isThis && open));
-        document.getElementById(b.getAttribute('aria-controls')).hidden = !(isThis && open);
+        toggle(document.getElementById(b.getAttribute('aria-controls')), isThis && open);
       });
     }));
+  }
+
+  // Toast (one at a time, auto-hides)
+  const toastEl = $('[data-toast]');
+  let toastTimer;
+  const toast = msg => {
+    if (!toastEl) return;
+    toastEl.textContent = msg;
+    toastEl.hidden = false;
+    toastEl.classList.remove('is-in');
+    void toastEl.offsetWidth;
+    toastEl.classList.add('is-in');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => { toastEl.classList.remove('is-in'); setTimeout(() => { toastEl.hidden = true; }, 250); }, 2800);
+  };
+
+  // Basket: "Add to basket" bumps the header count (concept only, nothing is stored)
+  const basket = $('[data-basket]');
+  const count = $('[data-basket-count]');
+  let items = 0;
+  $$('[data-add]').forEach(btn => btn.addEventListener('click', () => {
+    items += 1;
+    count.textContent = items;
+    count.hidden = false;
+    basket.setAttribute('aria-label', `Basket, ${items} item${items === 1 ? '' : 's'}`);
+    count.classList.remove('is-bump'); void count.offsetWidth; count.classList.add('is-bump');
+    if (!btn.dataset.label) btn.dataset.label = btn.textContent;
+    btn.textContent = 'Added ✓';
+    btn.classList.add('is-added');
+    clearTimeout(btn._t);
+    btn._t = setTimeout(() => { btn.textContent = btn.dataset.label; btn.classList.remove('is-added'); }, 1600);
+    toast(`${btn.dataset.add} added to your basket`);
+  }));
+
+  // Scroll reveal and count-up (only when JS runs, so content is never hidden without it)
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    document.documentElement.classList.add('js-reveal');
+    const targets = $$('main .section__head, .featured, .grid-4 > li, .science__body > *, .split__card, .review-box, .pro, .doctor, .quote, .faq__intro, .faq__item, .app__copy, .app__phones');
+    targets.forEach(el => {
+      const sibs = [...el.parentElement.children];
+      el.style.setProperty('--d', (sibs.indexOf(el) % 4) * 70 + 'ms');
+      el.classList.add('reveal');
+    });
+    const io = new IntersectionObserver(entries => entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('is-in');
+      io.unobserve(e.target);
+    }), { rootMargin: '0px 0px -8% 0px', threshold: .08 });
+    targets.forEach(el => io.observe(el));
+
+    const countUp = (el, to) => {
+      const t0 = performance.now(), dur = 1200;
+      const step = t => { const k = Math.min(1, (t - t0) / dur); el.textContent = Math.round(to * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(step); };
+      requestAnimationFrame(step);
+    };
+    const io2 = new IntersectionObserver(entries => entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      countUp(e.target, parseInt(e.target.dataset.to, 10));
+      io2.unobserve(e.target);
+    }), { threshold: .6 });
+    $$('.stat__num').forEach(el => { el.dataset.to = el.textContent.trim(); io2.observe(el); });
   }
 
   // Chat offer dismiss
@@ -381,7 +455,10 @@
 
     const open = e => {
       opener = e && e.currentTarget;
-      state = { i: 0, answers: [], alt: 0 };
+      if (e) e.preventDefault();
+      // A goal card starts the quiz with that goal picked, on question 2
+      const goal = opener && opener.dataset.quizGoal;
+      state = goal ? { i: 1, answers: [goal], alt: 0 } : { i: 0, answers: [], alt: 0 };
       quiz.hidden = false;
       document.body.classList.add('quiz-open');
       renderQuestion();
