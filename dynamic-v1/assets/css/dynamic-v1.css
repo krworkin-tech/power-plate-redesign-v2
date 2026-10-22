@@ -367,3 +367,6 @@ p, li, h3 { text-wrap: pretty; }
 @media (min-width: 901px) { .b-step h3 { white-space: nowrap; } }
 /* "More from every" stays on one line on phones: the headline scales with the screen instead of wrapping */
 @media (max-width: 767px) { .hero--freq .hero__title { font-size: min(56px, calc((100vw - 40px) / 7.8)); } }
+
+/* "Why Power Plate": the forced break after "something" applies from 1280px, where both lines fit */
+@media (max-width: 1279px) { .statement__lede .lede-br { display: none; } }

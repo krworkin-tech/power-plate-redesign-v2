@@ -393,3 +393,6 @@ p, li, h3 { text-wrap: pretty; }
 
 /* One-second stage: my8 proportions; the floor ring is anchored to the centre of its plate */
 .b-second__product { --bx: .5; --by: .86; --rx: .8; --ar: 2.4; aspect-ratio: 600 / 1121; }
+
+/* "Why Power Plate": the forced break after "something" applies from 1280px, where both lines fit */
+@media (max-width: 1279px) { .statement__lede .lede-br { display: none; } }
