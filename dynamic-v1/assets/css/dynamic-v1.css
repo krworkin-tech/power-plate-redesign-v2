@@ -37,6 +37,24 @@ html[data-hero="5"] .hero--freq { display: flex; }
   .tuner__chips button { flex: 1; padding: 0 8px; }
 }
 @media (prefers-reduced-motion: reduce) { .freq__media .hero__video { animation: none; } }
+/* "What happens in one second" on shorter laptop screens: the stage scales with the screen height,
+   and the third step is anchored to the bottom of the stage so it can never reach the footnote */
+@media (min-width: 961px) and (max-height: 960px) {
+  .b-second__pin { min-height: 600px; padding-top: clamp(48px, 8vh, 96px); padding-bottom: clamp(16px, 3vh, 32px); }
+  .b-second__head .kicker { margin-bottom: clamp(12px, 2vh, 24px); }
+  .b-second__head .h2 { font-size: clamp(36px, 6.4vh, 64px); }
+  .b-second__head { margin-bottom: clamp(14px, 2.6vh, 28px); }
+  .b-second__count { top: 0; }
+  .b-second__num { font-size: min(26vw, 42vh, 360px); }
+  .b-second__product { height: min(44vh, 480px); }
+  .b-step:nth-child(1) { top: 5%; }
+  .b-step:nth-child(2) { top: 30%; }
+  .b-step:nth-child(3) { top: auto; bottom: 4%; }
+  .b-step .tag { margin-bottom: clamp(8px, 1.4vh, 16px); }
+  .b-step h3 { font-size: clamp(21px, 3.2vh, 28px); }
+  .b-step p:not(.tag) { font-size: 15px; line-height: 1.45; }
+  .b-second__note { margin-top: clamp(12px, 2vh, 24px); font-size: 14px; }
+}
 /* Header over the hero: clear at the top, dark frosted once the page scrolls, so the hero copy never shows through it */
 .nav.is-scrolled:not(.is-solid) { background: rgba(11,13,16,.78); -webkit-backdrop-filter: saturate(160%) blur(18px); backdrop-filter: saturate(160%) blur(18px); box-shadow: 0 1px 0 rgba(255,255,255,.08); }
 
