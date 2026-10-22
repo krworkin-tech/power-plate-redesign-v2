@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="assets/css/direction-b.css?v=202610191804">
   <link rel="stylesheet" href="assets/css/hybrid.css?v=202610221520">
   <link rel="stylesheet" href="assets/css/chat.css?v=202610191804">
-  <link rel="stylesheet" href="assets/css/dynamic-v2.css?v=202610240100">
+  <link rel="stylesheet" href="assets/css/dynamic-v2.css?v=202610240200">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap">
 </head>
 <body>
@@ -254,41 +254,26 @@
   </section>
 
   <!-- ───────────── B · Inside one second (pinned) ───────────── -->
-  <section class="b-second section--dark" id="b-second" aria-labelledby="b-second-title" data-b-second>
-    <div class="b-second__pin" data-b-second-pin>
-      <div class="container b-second__head">
+  <section class="tl section section--dark" id="b-second" aria-labelledby="tl-title" data-tl>
+    <div class="container tl__grid">
+      <div class="tl__prod" aria-hidden="true"><span class="tl__ring" data-tl-ring></span><img src="assets/img/my8-stage.webp" width="600" height="1121" alt="" loading="lazy"></div>
+      <div class="tl__body">
         <p class="kicker kicker--dark"><svg aria-hidden="true"><use href="#pp-mark"/></svg>The Power&nbsp;Plate Effect</p>
-        <h2 class="h2" id="b-second-title">What happens in one second.</h2>
-      </div>
-
-      <div class="b-second__stage">
-        <p class="b-second__count" aria-hidden="true"><span class="b-second__num" data-b-count>0</span><span class="b-second__unit">vibrations per second</span></p>
-        <div class="b-second__product" aria-hidden="true">
-          <div class="floor"><span class="floor__shadow"></span><span class="floor__ring" data-b-ring></span><span class="floor__ring" data-b-ring></span><span class="floor__ring" data-b-ring></span></div>
-          <img src="assets/img/my8-stage.webp" width="600" height="1121" alt="" loading="lazy">
+        <h2 class="h2" id="tl-title">What happens in one second.</h2>
+        <p class="tl__read"><span class="tl__count" data-tl-count>45</span><span class="tl__unit">vibrations, and counting</span></p>
+        <div class="tl__track" aria-hidden="true">
+          <div class="tl__scale"><span>0 s</span><span>0.5 s</span><span>1 s</span></div>
+          <div class="tl__ticks" data-tl-ticks></div>
+          <p class="tl__slow">One second at 45Hz, slowed down 5×</p>
         </div>
-
-        <ol class="b-second__steps">
-          <li class="b-step b-step--l is-active" data-b-step>
-            <p class="tag tag--dark">The technology</p>
-            <h3>The platform moves.</h3>
-            <p>DualSync™ twin motors drive PrecisionWave™ vibration from 30 to 45 times a second, set 1Hz at&nbsp;a&nbsp;time.</p>
-          </li>
-          <li class="b-step b-step--r" data-b-step>
-            <p class="tag tag--dark">Your body</p>
-            <h3>Your muscles respond.</h3>
-            <p>Reflexive contractions activate up to 138% more muscle fibers*, with proMOTION™ cables adding three levels of&nbsp;resistance.</p>
-          </li>
-          <li class="b-step b-step--l b-step--low" data-b-step>
-            <p class="tag tag--dark">The result</p>
-            <h3>You get more, in less time.</h3>
-            <p>Timed 30, 45 and 60-second sets and 250+ coach-led workouts fit a full session into 15&nbsp;minutes.</p>
-          </li>
+        <ol class="tl__steps">
+          <li class="is-on" data-tl-step="1"><p class="tag tag--dark">The technology</p><h3>The platform moves.</h3><p>DualSync™ twin motors drive PrecisionWave™ vibration from 30 to 45 times a second, set 1Hz at&nbsp;a&nbsp;time.</p></li>
+          <li class="is-on" data-tl-step="16"><p class="tag tag--dark">Your body</p><h3>Your muscles respond.</h3><p>Reflexive contractions activate up to 138% more muscle fibers*, with proMOTION™ cables adding three levels of&nbsp;resistance.</p></li>
+          <li class="is-on" data-tl-step="45"><p class="tag tag--dark">The result</p><h3>You get more, in less time.</h3><p>Timed 30, 45 and 60-second sets and 250+ coach-led workouts fit a full session into 15&nbsp;minutes.</p></li>
         </ol>
       </div>
-
-      <p class="container b-second__note">The number above counts vibrations per second at the my8's peak frequency of&nbsp;45Hz. *Compared to conventional exercise, based on independent studies.</p>
     </div>
+    <p class="container tl__note">The count shows vibrations at the my8's peak frequency of&nbsp;45Hz. *Compared to conventional exercise, based on independent&nbsp;studies.</p>
   </section>
 
   <!-- ───────────── Goals ───────────── -->
@@ -642,8 +627,8 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-<script src="assets/js/hybrid.js?v=202610240100" defer></script>
+<script src="assets/js/hybrid.js?v=202610240200" defer></script>
 <script src="assets/js/chat.js?v=202610191804" defer></script>
-<script src="assets/js/dynamic-v2.js?v=202610240100" defer></script>
+<script src="assets/js/dynamic-v2.js?v=202610240200" defer></script>
 </body>
 </html>

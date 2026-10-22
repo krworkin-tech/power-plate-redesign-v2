@@ -401,7 +401,7 @@
   const countEl = $('[data-b-count]');
   const bSteps = $$('[data-b-step]');
   if (!hasGsap || reduceMotion) {
-    countEl.textContent = '45';
+    if (countEl) countEl.textContent = '45';
     bSteps.forEach(s => s.classList.add('is-active'));
     return;
   }
@@ -443,7 +443,7 @@
     const idx = p < .34 ? 0 : p < .67 ? 1 : 2;
     bSteps.forEach((s, i) => { s.classList.toggle('is-active', i === idx); s.classList.toggle('is-past', i < idx); });
   };
-  mm.add('(min-width: 961px)', () => {
+  if (countEl) mm.add('(min-width: 961px)', () => {
     const c = { v: 0 };
     gsap.timeline({
       scrollTrigger: {
@@ -456,7 +456,7 @@
       .fromTo('.b-second__product', { '--s': .92 }, { '--s': 1.04, ease: 'none', duration: 1 }, 0);
     return () => { countEl.textContent = '45'; setRingSpeed(1); bSteps.forEach(s => s.classList.add('is-active')); };
   });
-  mm.add('(max-width: 960px)', () => {
+  if (countEl) mm.add('(max-width: 960px)', () => {
     bSteps.forEach(s => s.classList.add('is-active'));
     const c = { v: 0 };
     gsap.to(c, { v: 45, duration: 1.6, ease: 'power3.out', onUpdate: () => (countEl.textContent = Math.round(c.v)), scrollTrigger: { trigger: '.b-second__count', start: 'top 85%', once: true } });

@@ -409,3 +409,31 @@ Promise.all(Object.values(PRELOAD).map(p => p.ready)).then(() => fill(cur));
 })();
 
 })();
+
+// Power Plate Effect · Timeline: 45 ticks lit one by one (one second slowed 5x), looping while the section is on screen
+(() => {
+  const sec = document.querySelector('[data-tl]');
+  if (!sec) return;
+  const box = sec.querySelector('[data-tl-ticks]'), count = sec.querySelector('[data-tl-count]'), ring = sec.querySelector('[data-tl-ring]');
+  const steps = [...sec.querySelectorAll('[data-tl-step]')];
+  for (let n = 0; n < 45; n++) box.appendChild(document.createElement('i'));
+  const ticks = [...box.children];
+  const show = k => {
+    ticks.forEach((t, n) => t.classList.toggle('is-on', n < k));
+    count.textContent = k;
+    steps.forEach(s => s.classList.toggle('is-on', k >= +s.dataset.tlStep));
+  };
+  show(45);
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  let timer = null, k = 0, hold = 0;
+  const run = () => {
+    if (timer) return;
+    k = 0; hold = 0; show(0);
+    timer = setInterval(() => {
+      if (k < 45) { k++; show(k); ring.classList.add('is-hit'); setTimeout(() => ring.classList.remove('is-hit'), 50); }
+      else if (++hold > 15) { k = 0; hold = 0; show(0); }
+    }, 100);
+  };
+  const stop = () => { clearInterval(timer); timer = null; show(45); };
+  new IntersectionObserver(([e]) => (e.isIntersecting ? run() : stop()), { threshold: .35 }).observe(sec);
+})();
