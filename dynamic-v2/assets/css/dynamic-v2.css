@@ -39,7 +39,7 @@ html[data-hero="7"] .hero--scenes { display: flex; }
   .hero--scenes { min-height: max(640px, calc(100svh - var(--promo-h))); } /* tabs sit on the fold under the promo bar */
   .scenes__shade { background: linear-gradient(180deg, rgba(11,13,16,.65) 0%, rgba(11,13,16,.3) 30%, rgba(11,13,16,.9) 55%, rgba(11,13,16,.98) 100%); }
   .scenes__inner { justify-content: flex-end; }
-  .hero--scenes .hero__lede { font-size: 16px; min-height: 4.65em; }
+  .hero--scenes .hero__lede { font-size: 16px; min-height: 3.1em; } /* every scene line fits two rows */
   .cine__proof { font-size: 14px; gap: 8px; padding-inline: 10px 12px; }
   .scenes { gap: 8px; padding-bottom: 24px; } /* one row of four, like story bars */
   .scene { padding-top: 12px; }
