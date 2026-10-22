@@ -1,49 +1,51 @@
 /* Dynamic V2 page additions: hero, logo strip, goals section (V1) with the Classic quiz, layout fixes */
-/* Hero · Cinema */
-html[data-hero="6"] .hero--cine { display: flex; }
-.hero--cine { min-height: max(720px, calc(100svh - var(--promo-h))); flex-direction: column; }
-.cine__media { position: absolute; inset: 0; z-index: -2; overflow: hidden; }
-.cine__media .hero__video { object-position: 55% 40%; }
-.cine__shade { position: absolute; inset: 0; z-index: -1; background:
+/* Hero · Scenes */
+html[data-hero="7"] .hero--scenes { display: flex; }
+.hero--scenes { min-height: max(720px, calc(100svh - var(--promo-h))); flex-direction: column; }
+.scenes__media { position: absolute; inset: 0; z-index: -2; overflow: hidden; }
+.scenes__media .hero__video { object-position: 60% 45%; transition: opacity .35s; }
+.scenes__media .hero__video.dip { opacity: .25; }
+.scenes__shade { position: absolute; inset: 0; z-index: -1; background:
   linear-gradient(180deg, rgba(11,13,16,.55) 0%, rgba(11,13,16,0) 22%),
-  radial-gradient(60% 55% at 50% 62%, rgba(11,13,16,.62) 0%, rgba(11,13,16,0) 75%),
-  linear-gradient(0deg, rgba(11,13,16,.94) 0%, rgba(11,13,16,.25) 50%, rgba(11,13,16,0) 70%); }
-.cine__inner { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding-top: calc(var(--nav-h) + 40px); padding-bottom: 36px; }
-.hero--cine .hero__title { font-size: clamp(52px, 6.4vw, 104px); max-width: none; }
-.hero--cine .hero__lede { max-width: 760px; margin-inline: auto; }
-.hero--cine .hero__ctas { justify-content: center; }
-/* Social proof in place of the tag: five stars and the customer count, on frosted glass */
-.cine__proof { display: inline-flex; align-items: center; gap: 12px; min-height: 40px; padding: 6px 16px 6px 12px; margin-bottom: 24px; border-radius: 999px; background: rgba(20,22,26,.55); border: 1px solid rgba(255,255,255,.18); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); font: 500 15px/1.2 var(--f-body); color: rgba(255,255,255,.88); }
+  linear-gradient(90deg, rgba(11,13,16,.88) 0%, rgba(11,13,16,.55) 36%, rgba(11,13,16,0) 66%),
+  linear-gradient(0deg, rgba(11,13,16,.9) 0%, rgba(11,13,16,0) 30%); }
+.scenes__inner { flex: 1; display: flex; flex-direction: column; justify-content: center; padding-top: calc(var(--nav-h) + 32px); padding-bottom: 24px; }
+.scenes__copy { max-width: 760px; }
+.hero--scenes .hero__title { font-size: clamp(56px, 6.6vw, 100px); max-width: none; }
+.hero--scenes .line > span { white-space: nowrap; }
+.scenes__words { display: inline-grid; }
+.scenes__words > span { grid-area: 1 / 1; transition: opacity .45s, transform .6s var(--ease-out); }
+.scenes__words > span[aria-hidden=true] { opacity: 0; transform: translateY(30%); }
+.scenes__words > span.out { opacity: 0; transform: translateY(-30%); }
+.scenes__words em { font-style: normal; color: var(--red-soft); }
+.hero--scenes .hero__lede { max-width: 640px; min-height: 3.1em; transition: opacity .3s; }
+.cine__proof { display: inline-flex; align-items: center; gap: 12px; min-height: 40px; padding: 6px 16px 6px 12px; margin-bottom: 24px; border-radius: 999px; background: rgba(20,22,26,.55); border: 1px solid rgba(255,255,255,.16); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); color: rgba(255,255,255,.86); font-size: 15px; }
 .cine__proof strong { color: #fff; font-weight: 600; }
 .cine__stars { display: inline-flex; gap: 2px; }
 .cine__stars svg { width: 16px; height: 16px; fill: #FBBD12; }
-.plates { display: flex; align-items: center; gap: 8px; width: max-content; max-width: calc(100% - 2 * var(--gutter)); padding: 8px; margin: 0 auto 32px; border-radius: 999px; background: rgba(20,22,26,.5); border: 1px solid rgba(255,255,255,.14); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); }
-.plates__label { padding: 0 12px 0 14px; color: rgba(255,255,255,.7); font-size: 15px; white-space: nowrap; }
-.plate { display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 4px 18px 4px 4px; border-radius: 999px; color: #fff; text-align: left; transition: background-color .2s; }
-.plate:hover { background: rgba(255,255,255,.1); }
-.plate img { width: 40px; height: 40px; border-radius: 50%; object-fit: contain; background: #fff; padding: 4px; }
-.plate b { display: block; font: 500 15px/1.2 var(--f-display); white-space: nowrap; }
-.plate small { display: block; font-size: 13px; line-height: 1.3; color: rgba(255,255,255,.66); font-weight: 400; white-space: nowrap; }
-.cine__cue { position: absolute; left: var(--gutter); bottom: 40px; display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,.72); font-size: 15px; }
-.cine__cue i { width: 1px; height: 36px; background: linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,0)); animation: cine-cue 1.8s var(--ease-in-out) infinite; transform-origin: top; }
-@keyframes cine-cue { 0% { transform: scaleY(0); } 50% { transform: scaleY(1); } 100% { transform: scaleY(1); opacity: 0; } }
-.hero--cine .cine__toggle { position: absolute; right: var(--gutter); top: calc(var(--nav-h) + 24px); width: 44px; height: 44px; } /* top right, clear of the chat button */
-@media (max-width: 1100px) { .cine__cue { display: none; } }
+/* Scene tabs: each has a progress line that fills while its scene plays */
+.scenes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; padding-bottom: 36px; padding-right: calc(var(--gutter) + 220px); } /* tabs stop short of the chat button */
+.scene { position: relative; padding: 16px 0 0; text-align: left; color: rgba(255,255,255,.6); transition: color .2s; }
+.scene::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 2px; border-radius: 2px; background: rgba(255,255,255,.22); }
+.scene i { position: absolute; left: 0; top: 0; height: 2px; width: 100%; border-radius: 2px; background: #fff; transform: scaleX(0); transform-origin: 0 50%; }
+.scene[aria-selected=true], .scene:hover { color: #fff; }
+.scene b { display: block; font: 500 18px/1.25 var(--f-display); letter-spacing: -.01em; }
+.scene small { display: block; margin-top: 4px; font-size: 15px; color: inherit; opacity: .8; }
+.scene:focus-visible { outline: 2px solid #fff; outline-offset: 6px; border-radius: 2px; }
+.hero--scenes .scenes__toggle { position: absolute; right: var(--gutter); top: calc(var(--nav-h) + 24px); width: 44px; height: 44px; }
 @media (max-width: 767px) {
-  .hero--cine { min-height: max(620px, 100svh); }
-  .cine__media .hero__video { object-position: 52% 40%; }
-  .cine__inner { padding-bottom: 24px; }
-  .hero--cine .hero__title { font-size: clamp(42px, 12vw, 52px); }
+  .hero--scenes { min-height: max(640px, calc(100svh - var(--promo-h))); } /* tabs sit on the fold under the promo bar */
+  .scenes__shade { background: linear-gradient(180deg, rgba(11,13,16,.55) 0%, rgba(11,13,16,.1) 30%, rgba(11,13,16,.7) 55%, rgba(11,13,16,.96) 100%); }
+  .scenes__inner { justify-content: flex-end; }
+  .hero--scenes .hero__lede { font-size: 16px; min-height: 4.65em; }
   .cine__proof { font-size: 14px; gap: 8px; padding-inline: 10px 12px; }
-  .plates { width: auto; max-width: none; margin-inline: var(--gutter); border-radius: 20px; flex-wrap: wrap; justify-content: center; margin-bottom: 24px; }
-  .plates__label { width: 100%; text-align: center; padding: 4px 0 0; }
-  .plates { gap: 4px; padding: 6px; }
-  .plate { gap: 8px; padding-right: 10px; }
-  .plate img { width: 34px; height: 34px; }
-  .plate small { display: none; }
-  .hero--cine .cine__toggle { top: calc(var(--nav-h) + 16px); }
+  .scenes { gap: 8px; padding-bottom: 24px; padding-right: calc(var(--gutter) + 52px); } /* one row of four, like story bars, clear of the chat button */
+  .scene { padding-top: 12px; }
+  .scene small { display: none; }
+  .scene b { font-size: 13px; line-height: 1.25; }
+  .hero--scenes .scenes__toggle { top: calc(var(--nav-h) + 16px); }
 }
-@media (prefers-reduced-motion: reduce) { .cine__cue i { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .scenes__words > span, .scenes__media .hero__video { transition: none; } }
 
 /* "What happens in one second" on shorter laptop screens: the stage scales with the screen height,
    and the third step is anchored to the bottom of the stage so it can never reach the footnote */
@@ -407,12 +409,9 @@ p, li, h3 { text-wrap: pretty; }
 /* V2 mobile round */
 @media (max-width: 767px) {
   /* Hero: headline on two rows, buttons full width */
-  .hero--cine .hero__title { font-size: min(52px, calc((100vw - 40px) / 8.4)); }
-  .hero--cine .hero__ctas { flex-direction: column; align-items: stretch; width: 100%; }
-  .hero--cine .hero__ctas .btn { width: 100%; justify-content: center; }
-  /* Shop by plate: the three plates share the full width */
-  .plates { justify-content: space-between; }
-  .plate { flex: 1; justify-content: center; padding-right: 8px; }
+  .hero--scenes .hero__title { font-size: min(50px, calc((100vw - 40px) / 7.9)); }
+  .hero--scenes .hero__ctas { flex-direction: column; align-items: stretch; width: 100%; }
+  .hero--scenes .hero__ctas .btn { width: 100%; justify-content: center; }
   /* Logo strip: logos 30% larger */
   .logos__row { gap: 62px; padding-right: 62px; }
   .logos__row img { height: 36px; max-width: 234px; }

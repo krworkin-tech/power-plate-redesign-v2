@@ -7,7 +7,7 @@
   <title>Power&nbsp;Plate | Dynamic V2</title>
   <meta name="description" content="Power Plate uses PrecisionWave™ vibration technology to make movement more effective, supporting performance, mobility and recovery in less time.">
   <meta name="theme-color" content="#0B0D10">
-  <script>document.documentElement.dataset.hero = "6";</script>
+  <script>document.documentElement.dataset.hero = "7";</script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="assets/css/direction-b.css?v=202610191804">
   <link rel="stylesheet" href="assets/css/hybrid.css?v=202610221520">
   <link rel="stylesheet" href="assets/css/chat.css?v=202610191804">
-  <link rel="stylesheet" href="assets/css/dynamic-v2.css?v=202610231700">
+  <link rel="stylesheet" href="assets/css/dynamic-v2.css?v=202610231800">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap">
 </head>
 <body>
@@ -120,37 +120,38 @@
 
 <main id="main">
 
-  <!-- Hero · Cinema: full-bleed film, the headline centred low like a title card, a shop-by-plate bar along the base -->
-  <section class="hero hero--cine" id="top" aria-labelledby="hc-title">
-    <div class="hero__media cine__media">
+  <!-- Hero · Scenes: full-bleed film split into scenes; the tabs along the base jump the film and change the headline -->
+  <section class="hero hero--scenes" id="top" aria-labelledby="hk-title">
+    <div class="hero__media scenes__media">
       <video class="hero__video" muted loop playsinline preload="metadata" poster="assets/video/hero-poster.jpg" data-autoplay>
         <source src="assets/video/hero-loop.mp4" type="video/mp4">
       </video>
     </div>
-    <div class="cine__shade" aria-hidden="true"></div>
-    <div class="cine__inner container">
-      <p class="cine__proof" data-hero-fade>
-        <span class="cine__stars" role="img" aria-label="Rated 5 out of 5 stars"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg></span>
-        <span>Trusted by <strong>3,495+</strong> customers</span>
-      </p>
-      <h1 class="hero__title" id="hc-title">
-        <span class="line"><span>More from</span></span>
-        <span class="line"><span>every movement.</span></span>
-      </h1>
-      <p class="hero__lede" data-hero-fade>Power&nbsp;Plate uses precision vibration technology to make movement more effective, supporting performance, mobility and recovery in less time.</p>
-      <div class="hero__ctas" data-hero-fade>
-        <a class="btn btn--primary" href="#discover">Find your Power&nbsp;Plate <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        <a class="btn btn--glass" href="#b-second">See how it works</a>
+    <div class="scenes__shade" aria-hidden="true"></div>
+    <button class="video-toggle scenes__toggle" type="button" aria-label="Pause background video" aria-pressed="false" data-video-toggle><svg aria-hidden="true"><use href="#i-pause"/></svg></button>
+    <div class="scenes__inner container">
+      <div class="scenes__copy">
+        <p class="cine__proof" data-hero-fade>
+          <span class="cine__stars" role="img" aria-label="Rated 5 out of 5 stars"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg></span>
+          <span>Trusted by <strong>3,495+</strong> customers</span>
+        </p>
+        <h1 class="hero__title" id="hk-title" aria-label="More from every movement.">
+          <span class="line"><span>More&nbsp;from&nbsp;every</span></span>
+          <span class="line"><span><span class="scenes__words" data-scene-words aria-hidden="true"><span><em>movement.</em></span><span aria-hidden="true"><em>second.</em></span><span aria-hidden="true"><em>push-up.</em></span><span aria-hidden="true"><em>kickback.</em></span></span></span></span>
+        </h1>
+        <p class="hero__lede" data-hero-fade data-lede>Power&nbsp;Plate uses precision vibration technology to make movement more effective, supporting performance, mobility and recovery in less time.</p>
+        <div class="hero__ctas" data-hero-fade>
+          <a class="btn btn--primary" href="#discover">Find your Power&nbsp;Plate <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--glass" href="#b-second">See how it works</a>
+        </div>
       </div>
     </div>
-    <nav class="plates" aria-label="Shop by plate" data-hero-fade>
-      <span class="plates__label">Shop by plate</span>
-      <a class="plate" href="#discover"><img src="https://cdn.shopify.com/s/files/1/0362/1139/2645/files/MoveBlack_2.png?width=120" alt="" width="40" height="40"><span><b>MOVE</b><small>Compact, column-free</small></span></a>
-      <a class="plate" href="#discover"><img src="https://cdn.shopify.com/s/files/1/0362/1139/2645/files/my5-2026_isolated-L45.png?width=120" alt="" width="40" height="40"><span><b>my5</b><small>Touchscreen, for home</small></span></a>
-      <a class="plate" href="#discover"><img src="https://cdn.shopify.com/s/files/1/0362/1139/2645/files/my8-_45.jpg?width=120" alt="" width="40" height="40"><span><b>my8</b><small>Coach-led workouts</small></span></a>
-    </nav>
-    <p class="cine__cue" aria-hidden="true"><i></i>Scroll</p>
-    <button class="video-toggle cine__toggle" type="button" aria-label="Pause background video" aria-pressed="false" data-video-toggle><svg aria-hidden="true"><use href="#i-pause"/></svg></button>
+    <div class="scenes container" role="tablist" aria-label="Scenes" data-scenes data-hero-fade>
+      <button class="scene" type="button" role="tab" aria-selected="true" data-at="0" data-copy="Power&nbsp;Plate uses precision vibration technology to make movement more effective, supporting performance, mobility and recovery in less time."><i></i><b>Movement</b><small>Step-ups, at home</small></button>
+      <button class="scene" type="button" role="tab" aria-selected="false" tabindex="-1" data-at="2.4" data-copy="PrecisionWave™ creates controlled, multidirectional vibrations, up to 50 times a second."><i></i><b>The plate</b><small>Up to 50&nbsp;Hz</small></button>
+      <button class="scene" type="button" role="tab" aria-selected="false" tabindex="-1" data-at="5" data-copy="Vibration adds an extra challenge to the moves you already know, so every push-up works harder."><i></i><b>Strength</b><small>Build power, faster</small></button>
+      <button class="scene" type="button" role="tab" aria-selected="false" tabindex="-1" data-at="9.2" data-copy="Natural, reflexive contractions activate more muscle, so toning moves count for more."><i></i><b>Tone</b><small>Activate more muscle</small></button>
+    </div>
   </section>
 
   <!-- ───────────── Logo strip: as featured in, and trusted by ───────────── -->
@@ -641,8 +642,8 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-<script src="assets/js/hybrid.js?v=202610231700" defer></script>
+<script src="assets/js/hybrid.js?v=202610231800" defer></script>
 <script src="assets/js/chat.js?v=202610191804" defer></script>
-<script src="assets/js/dynamic-v2.js?v=202610231700" defer></script>
+<script src="assets/js/dynamic-v2.js?v=202610231800" defer></script>
 </body>
 </html>

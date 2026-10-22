@@ -8,7 +8,50 @@
   set();
 })();
 
-
+// Scenes: each tab owns one shot of the film; its line fills as that stretch plays, then the next scene takes over
+(() => {
+  const v = document.querySelector('.hero--scenes .hero__video'), tabs = [...document.querySelectorAll('[data-scenes] .scene')];
+  if (!v || !tabs.length) return;
+  const words = [...document.querySelectorAll('[data-scene-words] > span')], lede = document.querySelector('[data-lede]');
+  const toggle = document.querySelector('.hero--scenes [data-video-toggle]');
+  const label = document.getElementById('hk-title');
+  const starts = tabs.map(t => +t.dataset.at); // each scene starts at a cut in the film
+  const sceneAt = t => { let k = 0; starts.forEach((s, n) => { if (t >= s) k = n; }); return k; };
+  const endOf = k => k + 1 < starts.length ? starts[k + 1] : (v.duration || 11.8);
+  let cur = 0;
+  const select = (k, seek) => {
+    if (k !== cur) {
+      words[cur].classList.add('out'); words[cur].setAttribute('aria-hidden', 'true');
+      const old = words[cur]; setTimeout(() => old.classList.remove('out'), 600);
+      words[k].removeAttribute('aria-hidden');
+      lede.style.opacity = 0;
+      setTimeout(() => { lede.textContent = tabs[k].dataset.copy; lede.style.opacity = 1; }, 250);
+      label.setAttribute('aria-label', 'More from every ' + words[k].textContent);
+    }
+    cur = k;
+    tabs.forEach((t, n) => { t.setAttribute('aria-selected', String(n === k)); t.tabIndex = n === k ? 0 : -1; if (n !== k) t.querySelector('i').style.transform = n < k ? 'scaleX(1)' : 'scaleX(0)'; });
+    if (seek) {
+      v.classList.add('dip');
+      setTimeout(() => { v.currentTime = +tabs[k].dataset.at; v.classList.remove('dip'); }, 250);
+    }
+  };
+  // The film's clock drives the progress lines and moves to the next scene on its own
+  const tick = () => {
+    const t = v.currentTime, k = sceneAt(t);
+    if (k !== cur && !v.classList.contains('dip')) select(k, false);
+    const p = Math.max(0, Math.min(1, (t - starts[k]) / (endOf(k) - starts[k])));
+    tabs[cur].querySelector('i').style.transform = `scaleX(${p})`;
+    requestAnimationFrame(tick);
+  };
+  tabs.forEach((t, n) => {
+    t.addEventListener('click', () => { select(n, true); if (v.paused && !(toggle && toggle.matches('[aria-pressed=true]'))) v.play().catch(() => {}); });
+    t.addEventListener('keydown', e => {
+      const d = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
+      if (d) { e.preventDefault(); const m = (n + d + tabs.length) % tabs.length; select(m, true); tabs[m].focus(); }
+    });
+  });
+  requestAnimationFrame(tick);
+})();
 
 (() => {
 // Goal content and picks come from the Dynamic page; photos and titles from Classic
