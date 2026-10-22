@@ -39,9 +39,10 @@ html[data-hero="5"] .hero--freq { display: flex; }
 @media (prefers-reduced-motion: reduce) { .freq__media .hero__video { animation: none; } }
 
 /* Goals (V1) */
-.gsec { background: #F0F0F2; color: var(--ink); }
-.gsec ul, .gsec ol { margin: 0; padding: 0; list-style: none; }
-.gsec svg { display: block; }
+.gsec { background: #F0F0F2; color: var(--ink); line-height: 1.5; } /* the standalone section runs on 1.5; the page body uses 1.6 */
+/* zero-specificity resets, so the section's own spacing (pill row margin etc.) still wins */
+:where(.gsec) ul, :where(.gsec) ol { margin: 0; padding: 0; list-style: none; }
+:where(.gsec) svg { display: block; }
 .quiz .btn { font-family: var(--f); gap: 0; }
 .quiz .btn:active { transform: none; }
 /* Goals: Classic's photo cards pick the goal; Dynamic's breakdown and product fill the panel below */
