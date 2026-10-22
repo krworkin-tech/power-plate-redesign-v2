@@ -403,3 +403,19 @@ p, li, h3 { text-wrap: pretty; }
   .b-footer__note { text-align: center; }
   .b-footer__bottom .b-footer__legal, .b-footer__bottom .b-footer__social { justify-content: center; }
 }
+
+/* V2 mobile round */
+@media (max-width: 767px) {
+  /* Hero: headline on two rows, buttons full width */
+  .hero--cine .hero__title { font-size: min(52px, calc((100vw - 40px) / 8.4)); }
+  .hero--cine .hero__ctas { flex-direction: column; align-items: stretch; width: 100%; }
+  .hero--cine .hero__ctas .btn { width: 100%; justify-content: center; }
+  /* Shop by plate: the three plates share the full width */
+  .plates { justify-content: space-between; }
+  .plate { flex: 1; justify-content: center; padding-right: 8px; }
+  /* Logo strip: logos 30% larger */
+  .logos__row { gap: 62px; padding-right: 62px; }
+  .logos__row img { height: 36px; max-width: 234px; }
+  /* One-second steps: paragraphs fill the line instead of balancing short */
+  .b-step p, .b-step h3 { text-wrap: pretty; }
+}
