@@ -17,7 +17,7 @@ html[data-hero="7"] .hero--scenes { display: flex; }
 .scenes__words > span { grid-area: 1 / 1; transition: opacity .45s, transform .6s var(--ease-out); }
 .scenes__words > span[aria-hidden=true] { opacity: 0; transform: translateY(30%); }
 .scenes__words > span.out { opacity: 0; transform: translateY(-30%); }
-.scenes__words em { font-style: normal; color: inherit; } /* same white as the rest of the headline */
+.scenes__words em { font-style: normal; color: var(--red-ui); } /* primary brand red, as on the buttons */
 .hero--scenes .hero__lede { max-width: 640px; min-height: 3.1em; transition: opacity .3s; }
 .cine__proof { display: inline-flex; align-items: center; gap: 12px; min-height: 40px; padding: 6px 16px 6px 12px; margin-bottom: 24px; border-radius: 999px; background: rgba(20,22,26,.55); border: 1px solid rgba(255,255,255,.16); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); color: rgba(255,255,255,.86); font-size: 15px; }
 .cine__proof strong { color: #fff; font-weight: 600; }
