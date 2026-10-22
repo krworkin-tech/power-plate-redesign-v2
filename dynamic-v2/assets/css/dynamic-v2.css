@@ -8,7 +8,7 @@ html[data-hero="7"] .hero--scenes { display: flex; }
 /* Shade +10% darker (round 2) */
 .scenes__shade { position: absolute; inset: 0; z-index: -1; background:
   linear-gradient(180deg, rgba(11,13,16,.65) 0%, rgba(11,13,16,0) 22%),
-  linear-gradient(90deg, rgba(11,13,16,.98) 0%, rgba(11,13,16,.65) 36%, rgba(11,13,16,0) 66%),
+  linear-gradient(90deg, rgba(11,13,16,.98) 0%, rgba(11,13,16,.75) 36%, rgba(11,13,16,.1) 66%, rgba(11,13,16,0) 80%),
   linear-gradient(0deg, rgba(11,13,16,.98) 0%, rgba(11,13,16,0) 30%); }
 .scenes__inner { flex: 1; display: flex; flex-direction: column; justify-content: center; padding-top: calc(var(--nav-h) + 32px); padding-bottom: 24px; }
 .scenes__copy { max-width: 760px; }
@@ -19,7 +19,8 @@ html[data-hero="7"] .hero--scenes { display: flex; }
 .scenes__words > span[aria-hidden=true] { opacity: 0; transform: translateY(30%); }
 .scenes__words > span.out { opacity: 0; transform: translateY(-30%); }
 .scenes__words em { font-style: normal; color: var(--red-ui); } /* primary brand red, as on the buttons */
-.hero--scenes .hero__lede { max-width: 640px; min-height: 3.1em; transition: opacity .3s; }
+.hero--scenes .hero__lede { max-width: 640px; min-height: 3.1em; }
+.scenes__lede { transition: opacity .3s; }
 .cine__proof { display: inline-flex; align-items: center; gap: 12px; min-height: 40px; padding: 6px 16px 6px 12px; margin-bottom: 24px; border-radius: 999px; background: rgba(20,22,26,.55); border: 1px solid rgba(255,255,255,.16); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); color: rgba(255,255,255,.86); font-size: 15px; }
 .cine__proof strong { color: #fff; font-weight: 600; }
 .cine__stars { display: inline-flex; gap: 2px; }
@@ -36,7 +37,7 @@ html[data-hero="7"] .hero--scenes { display: flex; }
 .hero--scenes .scenes__toggle { position: absolute; right: var(--gutter); top: calc(var(--nav-h) + 24px); width: 44px; height: 44px; }
 @media (max-width: 767px) {
   .hero--scenes { min-height: max(640px, calc(100svh - var(--promo-h))); } /* tabs sit on the fold under the promo bar */
-  .scenes__shade { background: linear-gradient(180deg, rgba(11,13,16,.65) 0%, rgba(11,13,16,.2) 30%, rgba(11,13,16,.8) 55%, rgba(11,13,16,.98) 100%); }
+  .scenes__shade { background: linear-gradient(180deg, rgba(11,13,16,.65) 0%, rgba(11,13,16,.3) 30%, rgba(11,13,16,.9) 55%, rgba(11,13,16,.98) 100%); }
   .scenes__inner { justify-content: flex-end; }
   .hero--scenes .hero__lede { font-size: 16px; min-height: 4.65em; }
   .cine__proof { font-size: 14px; gap: 8px; padding-inline: 10px 12px; }
