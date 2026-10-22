@@ -44,22 +44,22 @@
 // Goal content and picks come from the Dynamic page; photos and titles from Classic
 const CDN = 'https://cdn.shopify.com/s/files/1/0362/1139/2645/';
 const PRODUCTS = {
-  my8: { name: 'Power Plate® my8™', price: 8396, was: 10495, img: 'files/my8-_45.jpg', url: 'power-plate-my8' },
-  pulse: { name: 'Power Plate Pulse', price: 299, was: 399, img: 'files/PulseEdited.png', url: 'power-plate-pulse-3-0' },
-  move: { name: 'Power Plate® MOVE™', price: 2976, was: 3720, img: 'files/MoveBlack_2.png', url: 'power-plate-move' },
-  my5: { name: 'Upgraded Power Plate® my5™', price: 5196, was: 6495, img: 'files/my5-2026_isolated-L45.png', url: 'upgraded-power-plate-my5' },
-  personal: { name: 'Personal Power Plate®', price: 1836, was: 2295, img: 'files/Personal_0fdfee51-d763-4d38-9eb6-26127b59cf2a.png', url: 'personal-power-plate' }
+  my8: { name: 'Power Plate® my8™', price: 8396, was: 10495, img: 'files/my8-_45.jpg', url: 'power-plate-my8' },
+  pulse: { name: 'Power Plate Pulse', price: 299, was: 399, img: 'files/PulseEdited.png', url: 'power-plate-pulse-3-0' },
+  move: { name: 'Power Plate® MOVE™', price: 2976, was: 3720, img: 'files/MoveBlack_2.png', url: 'power-plate-move' },
+  my5: { name: 'Upgraded Power Plate® my5™', price: 5196, was: 6495, img: 'files/my5-2026_isolated-L45.png', url: 'upgraded-power-plate-my5' },
+  personal: { name: 'Personal Power Plate®', price: 1836, was: 2295, img: 'files/Personal_0fdfee51-d763-4d38-9eb6-26127b59cf2a.png', url: 'personal-power-plate' }
 };
 const GOALS = [
-  { title: 'Strength', sub: 'Build power, faster', img: 'assets/img/goals/goal-strength.jpg', pos: '22% 50%', alt: 'A woman does a knee drive beside a Power Plate my8',
+  { title: 'Strength', sub: 'Build power, faster', img: 'assets/img/goals/goal-strength.jpg', pos: '22% 50%', alt: 'A woman does a knee drive beside a Power Plate my8',
     head: 'Get stronger, in less time.', copy: 'Vibration adds an extra challenge to the moves you already know, so every squat, lunge and push-up activates more of your muscles.', list: ['Increase strength', 'Improve core strength', 'Activate more muscles'], rec: 'my8' },
-  { title: 'Recovery', sub: 'Bounce back sooner', img: 'assets/img/goals/goal-recovery.jpg', pos: '50% 40%', alt: 'A man uses a Pulse massager while seated on a Power Plate',
+  { title: 'Recovery', sub: 'Bounce back sooner', img: 'assets/img/goals/goal-recovery.jpg', pos: '50% 40%', alt: 'A man uses a Pulse massager while seated on a Power Plate',
     head: 'Recover faster, feel better.', copy: 'Relax tight, sore muscles, release fascia and promote blood flow, after training or after a long day.', list: ['Increase blood circulation', 'Warm up faster', 'Relieve muscle soreness'], rec: 'pulse' },
-  { title: 'Mobility', sub: 'Move with ease', img: 'assets/img/goals/goal-mobility.jpg', pos: '45% 50%', alt: 'A woman holds a side stretch on a Power Plate',
+  { title: 'Mobility', sub: 'Move with ease', img: 'assets/img/goals/goal-mobility.jpg', pos: '45% 50%', alt: 'A woman holds a side stretch on a Power Plate',
     head: 'Move more freely.', copy: 'Stretch deeper and hold positions with more control. Vibration training supports flexibility, balance and range of motion.', list: ['Improve flexibility', 'Better balance and stability', 'Greater range of motion'], rec: 'move' },
-  { title: 'Healthy aging', sub: 'Stay strong for life', img: 'assets/img/goals/goal-aging.jpg', pos: '55% 50%', alt: 'An older man trains with resistance cables on a Power Plate',
+  { title: 'Healthy aging', sub: 'Stay strong for life', img: 'assets/img/goals/goal-aging.jpg', pos: '55% 50%', alt: 'An older man trains with resistance cables on a Power Plate',
     head: 'Strength for every decade.', copy: 'Light, low-impact sessions that support strength, balance and bone health, whatever your fitness level.', list: ['Improve bone strength', 'Low impact on joints', 'Light sessions from 10 minutes'], rec: 'my5' },
-  { title: 'Everyday wellness', sub: 'A few minutes a day', img: CDN + 'products/personal-power-plate-1448.jpg?width=1400', pos: '40% 50%', alt: 'A woman exercises on the Personal Power Plate beside her bed',
+  { title: 'Everyday wellness', sub: 'A few minutes a day', img: CDN + 'products/personal-power-plate-1448.jpg?width=1400', pos: '40% 50%', alt: 'A woman exercises on the Personal Power Plate beside her bed',
     head: 'A few minutes a day, at home.', copy: 'Compact, quiet and simple to use, so moving better becomes part of your routine instead of another chore.', list: ['Compact and easy to store', 'Remarkably quiet', 'Quick, simple sessions'], rec: 'personal' }
 ];
 const money = n => '$' + n.toLocaleString('en-US');
@@ -219,11 +219,11 @@ Promise.all(Object.values(PRELOAD).map(p => p.ready)).then(() => fill(cur));
     ];
 
     const PRODUCTS = {
-      move: { name: 'Power Plate® MOVE™', short: 'Power Plate® MOVE™', price: '$3,720', img: 'assets/img/goals/quiz-move.png', w: 970, h: 565,
-        blurb: 'Whole body, for home. 20% off and free shipping for a limited time.', extra: 'Guided classes in the Power Plate app' },
-      personal: { name: 'Personal Power Plate®', short: 'Personal Power Plate®', price: '$2,295', img: 'assets/img/goals/prod-personal.png', w: 566, h: 566,
+      move: { name: 'Power Plate® MOVE™', short: 'Power Plate® MOVE™', price: '$3,720', img: 'assets/img/goals/quiz-move.png', w: 970, h: 565,
+        blurb: 'Whole body, for home. 20% off and free shipping for a limited time.', extra: 'Guided classes in the Power Plate app' },
+      personal: { name: 'Personal Power Plate®', short: 'Personal Power Plate®', price: '$2,295', img: 'assets/img/goals/prod-personal.png', w: 566, h: 566,
         blurb: 'Compact, for home. 20% off and free shipping for a limited time.', extra: 'Our most compact plate, easy to store' },
-      my8: { name: 'Power Plate® my8™', short: 'my8™', price: '$10,495', img: 'assets/img/goals/prod-my8.png', w: 566, h: 566, soldOut: true,
+      my8: { name: 'Power Plate® my8™', short: 'my8™', price: '$10,495', img: 'assets/img/goals/prod-my8.png', w: 566, h: 566, soldOut: true,
         blurb: 'Performance studio with handles and a touchscreen. Back in stock soon.', extra: 'Touchscreen with coach-led workouts built in' }
     };
 

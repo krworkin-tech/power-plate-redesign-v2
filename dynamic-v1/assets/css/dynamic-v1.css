@@ -353,3 +353,11 @@ body.quiz-open { overflow: hidden; }
 .b-footer__bottom .b-footer__social a { width: 44px; height: 44px; min-height: 0; padding: 0; justify-content: center; border-radius: 50%; }
 .b-footer__bottom .b-footer__social svg { width: 20px; height: 20px; }
 @media (max-width: 760px) { .b-footer__bottom .b-footer__social { order: -1; } }
+
+/* V1 edit round: no orphan words anywhere; balanced, even lines in the one-second steps and footnote */
+p, li, h3 { text-wrap: pretty; }
+.b-step p, .b-step h3, .b-second__note { text-wrap: balance; }
+/* 1. Hero: exactly 64px between the paragraph and the button row */
+@media (min-width: 768px) { .hero--freq .hero__ctas { margin-top: 64px; } }
+/* 2. "Why Power Plate": the paragraph runs as wide as the headline, two lines on desktop */
+@media (min-width: 901px) { .statement__lede { max-width: none; } }

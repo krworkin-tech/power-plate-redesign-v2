@@ -1,4 +1,4 @@
-/* Power Plate | Dynamic (A + B) interactions
+/* Power Plate | Dynamic (A + B) interactions
    Standalone: Direction A's main.js and Direction B's direction-b.js stay untouched.
    B behaviour: nav, Wave hero, pillar panels, one second, proof wall, science, closing, footer.
    A behaviour: statement, goals tabs, guided finder, everyday horizontal scroll. */
@@ -20,31 +20,31 @@
      Product data, names, specs and prices mirror powerplate.com
      ------------------------------------------------------------------ */
   const PRODUCTS = {
-    personal: { name: 'Personal Power Plate®', tag: 'Most compact', desc: 'Gold-standard vibration in our smallest plate.', specs: ['Set 35Hz frequency', '30- or 60-second timer', 'Column-free, with travel case'], price: 1836, was: 2295, img: 'files/Personal_0fdfee51-d763-4d38-9eb6-26127b59cf2a.png', url: 'personal-power-plate' },
-    move: { name: 'Power Plate® MOVE™', tag: 'Bestseller', desc: 'Compact and column-free, with more power.', specs: ['6 variable frequency modes', 'Supports up to 300 lbs', 'Timer up to 9 minutes'], price: 2976, was: 3720, img: 'files/MoveBlack_2.png', url: 'power-plate-move',
+    personal: { name: 'Personal Power Plate®', tag: 'Most compact', desc: 'Gold-standard vibration in our smallest plate.', specs: ['Set 35Hz frequency', '30- or 60-second timer', 'Column-free, with travel case'], price: 1836, was: 2295, img: 'files/Personal_0fdfee51-d763-4d38-9eb6-26127b59cf2a.png', url: 'personal-power-plate' },
+    move: { name: 'Power Plate® MOVE™', tag: 'Bestseller', desc: 'Compact and column-free, with more power.', specs: ['6 variable frequency modes', 'Supports up to 300 lbs', 'Timer up to 9 minutes'], price: 2976, was: 3720, img: 'files/MoveBlack_2.png', url: 'power-plate-move',
       swatches: [
         { name: 'Black', color: '#1d1e21', img: 'files/MoveBlack_2.png' },
         { name: 'Red', color: '#D8262F', img: 'files/MoveRed_2_3b8612d0-33ad-473b-907c-fe844aacd995.png' },
         { name: 'Titanium', color: '#8E9196', img: 'files/MoveTitaniumnobadge.png' },
         { name: 'Wood', color: '#B4703C', img: 'files/MOVEWoodNoBadge.png' }
       ] },
-    my5: { name: 'Upgraded Power Plate® my5™', tag: 'New touchscreen', desc: 'Patented PrecisionWave™ for the home.', specs: ['30–40Hz in 1Hz increments', '5-inch LCD touchscreen', 'Quick-start programs, 300 lb max'], price: 5196, was: 6495, img: 'files/my5-2026_isolated-L45.png', url: 'upgraded-power-plate-my5' },
-    my8: { name: 'Power Plate® my8™', tag: 'Most advanced at home', desc: 'Coach-led training, built in.', specs: ['30–45Hz in 1Hz increments', 'proMOTION™ resistance cables', '250+ coach-led workouts'], price: 8396, was: 10495, img: 'files/my8-_45.jpg', url: 'power-plate-my8' },
-    pro5: { name: 'Power Plate® pro5™', tag: 'Commercial classic', desc: 'Proven in clubs, clinics and sport.', specs: ['25–50Hz frequency range', 'Up to 9 minutes continuous', 'Large plate surface'], price: 10396, was: 12995, img: 'files/2313-Black-pro5-1.jpg', url: 'power-plate-pro5' },
-    pro5hp: { name: 'Power Plate® pro5HP™', tag: 'High performance', desc: 'Columnless, built for serious training.', specs: ['Supports up to 500 lbs', 'Full 360° range of motion', 'Integrates with a squat rack'], price: 10796, was: 13495, img: 'products/2017-hp-661.jpg', cover: true, url: 'power-plate-pro5hp' },
-    pro8: { name: 'Power Plate® pro8™', tag: 'Flagship', desc: 'Our largest, most advanced platform.', specs: ['25–50Hz in 1Hz increments', 'Touchscreen + proMOTION™ cables', '250+ workouts, 1,000+ techniques'], price: 13196, was: 16495, img: 'files/pro8-_45.jpg', url: 'power-plate-pro8' },
-    pro7hc: { name: 'Power Plate pro7HC', tag: 'Healthcare', desc: 'Designed for medical facilities.', specs: ['Integrated heart monitor', 'Range-of-motion tracking', 'Patient-friendly video programs'], price: 14396, was: 17995, img: 'products/pro7-hc-showcase-1_e5c648af-9c8e-4f13-afdb-d132793e2059.jpg', url: 'power-plate-pro7hc' },
-    pulse: { name: 'Power Plate Pulse', tag: 'Most powerful', desc: 'Our most powerful massage gun yet.', specs: ['6 intensity levels', '6-hour battery life', '6 massage attachments'], price: 299, was: 399, img: 'files/PulseEdited.png', url: 'power-plate-pulse-3-0' },
-    mini: { name: 'Power Plate Mini+', tag: 'Travel size', desc: 'Ultracompact and whisper-quiet.', specs: ['Weighs under 1 lb', '4 intensity settings', '2 attachments'], price: 199, was: 285, img: 'files/Mini_Edited.png', url: 'power-plate-mini-plus' },
-    roller: { name: 'Power Plate Roller', tag: 'Vibrating foam roller', desc: 'The foam roller, taken further.', specs: ['3 vibration modes', 'Under 3 lbs', '3-hour battery'], price: 129, was: 179, img: 'files/Roller-isolated_black_2400px_ee51f9f3-d7ef-4295-82a4-ec14c6204de9.png', url: 'power-plate-roller' },
-    dualsphere: { name: 'Power Plate DualSphere', tag: 'Targeted relief', desc: 'Vibrating peanut massage ball.', specs: ['4 intensity levels', 'Under 2 lbs', '3-hour battery'], price: 129, was: 179, img: 'products/DualSphere-isolated_black_2400px_1.png', url: 'power-plate-dualsphere' }
+    my5: { name: 'Upgraded Power Plate® my5™', tag: 'New touchscreen', desc: 'Patented PrecisionWave™ for the home.', specs: ['30–40Hz in 1Hz increments', '5-inch LCD touchscreen', 'Quick-start programs, 300 lb max'], price: 5196, was: 6495, img: 'files/my5-2026_isolated-L45.png', url: 'upgraded-power-plate-my5' },
+    my8: { name: 'Power Plate® my8™', tag: 'Most advanced at home', desc: 'Coach-led training, built in.', specs: ['30–45Hz in 1Hz increments', 'proMOTION™ resistance cables', '250+ coach-led workouts'], price: 8396, was: 10495, img: 'files/my8-_45.jpg', url: 'power-plate-my8' },
+    pro5: { name: 'Power Plate® pro5™', tag: 'Commercial classic', desc: 'Proven in clubs, clinics and sport.', specs: ['25–50Hz frequency range', 'Up to 9 minutes continuous', 'Large plate surface'], price: 10396, was: 12995, img: 'files/2313-Black-pro5-1.jpg', url: 'power-plate-pro5' },
+    pro5hp: { name: 'Power Plate® pro5HP™', tag: 'High performance', desc: 'Columnless, built for serious training.', specs: ['Supports up to 500 lbs', 'Full 360° range of motion', 'Integrates with a squat rack'], price: 10796, was: 13495, img: 'products/2017-hp-661.jpg', cover: true, url: 'power-plate-pro5hp' },
+    pro8: { name: 'Power Plate® pro8™', tag: 'Flagship', desc: 'Our largest, most advanced platform.', specs: ['25–50Hz in 1Hz increments', 'Touchscreen + proMOTION™ cables', '250+ workouts, 1,000+ techniques'], price: 13196, was: 16495, img: 'files/pro8-_45.jpg', url: 'power-plate-pro8' },
+    pro7hc: { name: 'Power Plate pro7HC', tag: 'Healthcare', desc: 'Designed for medical facilities.', specs: ['Integrated heart monitor', 'Range-of-motion tracking', 'Patient-friendly video programs'], price: 14396, was: 17995, img: 'products/pro7-hc-showcase-1_e5c648af-9c8e-4f13-afdb-d132793e2059.jpg', url: 'power-plate-pro7hc' },
+    pulse: { name: 'Power Plate Pulse', tag: 'Most powerful', desc: 'Our most powerful massage gun yet.', specs: ['6 intensity levels', '6-hour battery life', '6 massage attachments'], price: 299, was: 399, img: 'files/PulseEdited.png', url: 'power-plate-pulse-3-0' },
+    mini: { name: 'Power Plate Mini+', tag: 'Travel size', desc: 'Ultracompact and whisper-quiet.', specs: ['Weighs under 1 lb', '4 intensity settings', '2 attachments'], price: 199, was: 285, img: 'files/Mini_Edited.png', url: 'power-plate-mini-plus' },
+    roller: { name: 'Power Plate Roller', tag: 'Vibrating foam roller', desc: 'The foam roller, taken further.', specs: ['3 vibration modes', 'Under 3 lbs', '3-hour battery'], price: 129, was: 179, img: 'files/Roller-isolated_black_2400px_ee51f9f3-d7ef-4295-82a4-ec14c6204de9.png', url: 'power-plate-roller' },
+    dualsphere: { name: 'Power Plate DualSphere', tag: 'Targeted relief', desc: 'Vibrating peanut massage ball.', specs: ['4 intensity levels', 'Under 2 lbs', '3-hour battery'], price: 129, was: 179, img: 'products/DualSphere-isolated_black_2400px_1.png', url: 'power-plate-dualsphere' }
   };
   const RANGES = {
     home: ['personal', 'move', 'my5', 'my8'],
     pro: ['pro5', 'pro5hp', 'pro8', 'pro7hc'],
     recovery: ['pulse', 'mini', 'roller', 'dualsphere']
   };
-  /* Concept matching logic for the guided finder (to be validated with Power Plate). */
+  /* Concept matching logic for the guided finder (to be validated with Power Plate). */
   const MATCH = {
     home: { strength: 'my8', recovery: 'move', mobility: 'move', aging: 'my5', wellness: 'personal' },
     pro: { strength: 'pro5hp', recovery: 'pro5', mobility: 'pro8', aging: 'pro7hc', wellness: 'pro5' },
@@ -52,11 +52,11 @@
   };
   const GOAL_LABEL = { strength: 'Strength', recovery: 'Recovery', mobility: 'Mobility', aging: 'Healthy aging', wellness: 'Wellness' };
   const GOALS = [
-    { img: 'files/my8-Lifestyle-2.jpg', alt: 'A woman trains a lunge on the Power Plate my8.', title: 'Get stronger, in less time.', copy: 'Vibration adds an extra challenge to the moves you already know, so every squat, lunge and push-up activates more of your muscles.', list: ['Increase strength', 'Improve core strength', 'Activate more muscles'], rec: 'my8', where: 'home', chip: 'strength' },
-    { img: 'products/IMG_0059_5968f05d-f10d-4e27-b98b-43261acf6fc1.jpg', alt: 'A woman uses the Power Plate Pulse massage gun on her shoulder.', title: 'Recover faster, feel better.', copy: 'Relax tight, sore muscles, release fascia and promote blood flow, after training or after a long day.', list: ['Increase blood circulation', 'Warm up faster', 'Relieve muscle soreness'], rec: 'pulse', where: 'recovery', chip: 'recovery' },
-    { img: 'products/TBA-POWER-PLATE-Web-18.jpg', alt: 'A woman holds a side plank on a red Power Plate MOVE in a bright living room.', title: 'Move more freely.', copy: 'Stretch deeper and hold positions with more control. Vibration training supports flexibility, balance and range of motion.', list: ['Improve flexibility', 'Better balance and stability', 'Greater range of motion'], rec: 'move', where: 'home', chip: 'mobility' },
-    { img: 'files/my8-Lifestyle-1.jpg', alt: 'An older man steps onto a Power Plate in his home.', title: 'Strength for every decade.', copy: 'Light, low-impact sessions that support strength, balance and bone health, whatever your fitness level.', list: ['Improve bone strength', 'Low impact on joints', 'Light sessions from 10 minutes'], rec: 'my5', where: 'home', chip: 'aging' },
-    { img: 'products/personal-power-plate-1448.jpg', alt: 'A woman exercises on the Personal Power Plate beside her bed.', title: 'A few minutes a day, at home.', copy: 'Compact, quiet and simple to use, so moving better becomes part of your routine instead of another chore.', list: ['Compact and easy to store', 'Remarkably quiet', 'Quick, simple sessions'], rec: 'personal', where: 'home', chip: 'wellness' }
+    { img: 'files/my8-Lifestyle-2.jpg', alt: 'A woman trains a lunge on the Power Plate my8.', title: 'Get stronger, in less time.', copy: 'Vibration adds an extra challenge to the moves you already know, so every squat, lunge and push-up activates more of your muscles.', list: ['Increase strength', 'Improve core strength', 'Activate more muscles'], rec: 'my8', where: 'home', chip: 'strength' },
+    { img: 'products/IMG_0059_5968f05d-f10d-4e27-b98b-43261acf6fc1.jpg', alt: 'A woman uses the Power Plate Pulse massage gun on her shoulder.', title: 'Recover faster, feel better.', copy: 'Relax tight, sore muscles, release fascia and promote blood flow, after training or after a long day.', list: ['Increase blood circulation', 'Warm up faster', 'Relieve muscle soreness'], rec: 'pulse', where: 'recovery', chip: 'recovery' },
+    { img: 'products/TBA-POWER-PLATE-Web-18.jpg', alt: 'A woman holds a side plank on a red Power Plate MOVE in a bright living room.', title: 'Move more freely.', copy: 'Stretch deeper and hold positions with more control. Vibration training supports flexibility, balance and range of motion.', list: ['Improve flexibility', 'Better balance and stability', 'Greater range of motion'], rec: 'move', where: 'home', chip: 'mobility' },
+    { img: 'files/my8-Lifestyle-1.jpg', alt: 'An older man steps onto a Power Plate in his home.', title: 'Strength for every decade.', copy: 'Light, low-impact sessions that support strength, balance and bone health, whatever your fitness level.', list: ['Improve bone strength', 'Low impact on joints', 'Light sessions from 10 minutes'], rec: 'my5', where: 'home', chip: 'aging' },
+    { img: 'products/personal-power-plate-1448.jpg', alt: 'A woman exercises on the Personal Power Plate beside her bed.', title: 'A few minutes a day, at home.', copy: 'Compact, quiet and simple to use, so moving better becomes part of your routine instead of another chore.', list: ['Compact and easy to store', 'Remarkably quiet', 'Quick, simple sessions'], rec: 'personal', where: 'home', chip: 'wellness' }
   ];
 
   /* ------------------------------------------------------------------
@@ -169,7 +169,7 @@
   }
 
   /* ------------------------------------------------------------------
-     Why Power Plate, statement words, photo cycle, expanding panels
+     Why Power Plate, statement words, photo cycle, expanding panels
      ------------------------------------------------------------------ */
   const statement = $('[data-reveal-words]');
   if (statement) {
@@ -279,7 +279,7 @@
   }
 
   /* ------------------------------------------------------------------
-     Find your Power Plate (guided finder)
+     Find your Power Plate (guided finder)
      ------------------------------------------------------------------ */
   const grid = $('[data-products]');
   const biz = $('[data-biz]');

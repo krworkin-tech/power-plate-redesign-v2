@@ -1,4 +1,4 @@
-// Power Plate product guide chat (Dynamic direction): four taps to a recommendation.
+// Power Plate product guide chat (Dynamic direction): four taps to a recommendation.
 (() => {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const wait = ms => new Promise(r => setTimeout(r, reduceMotion ? 0 : ms));
@@ -14,8 +14,8 @@
       <button class="ppchat__offer-text" type="button" data-pp-open>Get 20% off today</button>
       <button class="ppchat__offer-close" type="button" aria-label="Dismiss offer message" data-pp-dismiss>×</button>
     </div>
-    <button class="ppchat__btn" type="button" aria-label="Ask Power Plate, open the Power Plate product guide" aria-expanded="false" aria-controls="pp-guide" data-pp-open>
-      ${mark}<span class="ppchat__label">Ask Power Plate</span>
+    <button class="ppchat__btn" type="button" aria-label="Ask Power Plate, open the Power Plate product guide" aria-expanded="false" aria-controls="pp-guide" data-pp-open>
+      ${mark}<span class="ppchat__label">Ask Power Plate</span>
     </button>`;
 
   const panel = document.createElement('section');
@@ -28,9 +28,9 @@
   panel.innerHTML = `
     <header class="pppanel__head">
       ${mark}
-      <h2 id="pp-guide-title">Power Plate</h2>
+      <h2 id="pp-guide-title">Power Plate</h2>
       <button class="pppanel__restart" type="button" hidden data-pp-restart>Start over</button>
-      <button class="pppanel__close" type="button" aria-label="Close the Power Plate guide" data-pp-close>×</button>
+      <button class="pppanel__close" type="button" aria-label="Close the Power Plate guide" data-pp-close>×</button>
     </header>
     <div class="pppanel__log" role="log" aria-live="polite" data-pp-log></div>`;
 
@@ -42,14 +42,14 @@
 
   // Prices match the Dynamic page (20% off, was-price struck through)
   const PRODUCTS = {
-    personal: { name: 'Personal Power Plate®', price: '$1,836', was: '$2,295', img: 'prod-personal.webp', url: 'personal-power-plate', alt: 'Personal Power Plate, compact black platform' },
-    move: { name: 'Power Plate® MOVE™', price: '$2,976', was: '$3,720', img: 'prod-move.webp', url: 'power-plate-move', alt: 'Power Plate MOVE in red' },
-    my8: { name: 'Power Plate® my8™', price: '$8,396', was: '$10,495', img: 'prod-my8.webp', url: 'power-plate-my8', alt: 'Power Plate my8 with column and console' },
-    pulse: { name: 'Power Plate Pulse', price: '$299', was: '$399', img: 'prod-pulse.webp', url: 'power-plate-pulse-3-0', alt: 'Power Plate Pulse handheld massager in red' }
+    personal: { name: 'Personal Power Plate®', price: '$1,836', was: '$2,295', img: 'prod-personal.webp', url: 'personal-power-plate', alt: 'Personal Power Plate, compact black platform' },
+    move: { name: 'Power Plate® MOVE™', price: '$2,976', was: '$3,720', img: 'prod-move.webp', url: 'power-plate-move', alt: 'Power Plate MOVE in red' },
+    my8: { name: 'Power Plate® my8™', price: '$8,396', was: '$10,495', img: 'prod-my8.webp', url: 'power-plate-my8', alt: 'Power Plate my8 with column and console' },
+    pulse: { name: 'Power Plate Pulse', price: '$299', was: '$399', img: 'prod-pulse.webp', url: 'power-plate-pulse-3-0', alt: 'Power Plate Pulse handheld massager in red' }
   };
 
   const STEPS = [
-    { key: 'goal', ask: 'Hi! I’m your Power Plate guide. What would you like to improve?', options: ['Strength', 'Recovery', 'Mobility', 'Healthy aging', 'Other'] },
+    { key: 'goal', ask: 'Hi! I’m your Power Plate guide. What would you like to improve?', options: ['Strength', 'Recovery', 'Mobility', 'Healthy aging', 'Other'] },
     { key: 'place', ask: 'Where will it live?', options: ['A spot at home', 'A gym or studio', 'A clinic'] },
     { key: 'handles', ask: 'Handles for balance?', options: ['Yes, handles', 'No, floor level'] },
     { key: 'budget', ask: 'Any budget in mind?', options: ['Under $2,500', '$2,500 to $5,000', 'Over $5,000', 'Not sure yet'] }
@@ -82,7 +82,7 @@
   const botSay = async (text, id) => {
     const typing = document.createElement('p');
     typing.className = 'ppmsg ppmsg--bot ppmsg--typing';
-    typing.setAttribute('aria-label', 'Power Plate is typing');
+    typing.setAttribute('aria-label', 'Power Plate is typing');
     typing.innerHTML = '<span></span><span></span><span></span>';
     add(typing);
     await wait(650);
