@@ -455,9 +455,10 @@ p, li, h3 { text-wrap: pretty; }
 .tl__steps li { min-width: 0; padding-top: 18px; border-top: 2px solid rgba(255,255,255,.14); opacity: .38; transition: opacity .5s var(--ease-out), border-color .5s; }
 .tl__steps li.is-on { opacity: 1; border-color: var(--red); }
 .tl__steps .tag { margin-bottom: 12px; }
-.tl__steps h3 { font: 500 20px/1.2 var(--f-display); letter-spacing: -.01em; margin-bottom: 8px; text-wrap: balance; }
+.tl__steps h3 { font: 500 clamp(17px, 1.4vw, 20px)/1.2 var(--f-display); white-space: nowrap; letter-spacing: -.01em; margin-bottom: 8px; text-wrap: balance; }
 .tl__steps p:not(.tag) { color: var(--on-dark-2); font-size: 15px; line-height: 1.5; text-wrap: pretty; }
 .tl__note { margin-top: clamp(40px, 5vw, 64px); font-size: 14px; line-height: 1.5; color: rgba(245,245,247,.5); text-wrap: pretty; }
+@media (min-width: 961px) and (max-width: 1365px) { .tl__grid { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 40px; } .tl__steps { gap: 20px; } }
 @media (max-width: 960px) {
   .tl__grid { grid-template-columns: minmax(0, 1fr); }
   .tl__prod { width: min(220px, 60%); }
@@ -469,6 +470,7 @@ p, li, h3 { text-wrap: pretty; }
   .tl__prod { width: 170px; }
   .tl__ticks { gap: 2px; height: 44px; }
   .tl__steps { grid-template-columns: minmax(0, 1fr); gap: 20px; text-align: left; }
+  .tl__steps h3 { font-size: 20px; }
   .tl__note { text-align: center; }
 }
 @media (prefers-reduced-motion: reduce) { .tl__ring, .tl__ticks i, .tl__steps li { transition: none; } }
