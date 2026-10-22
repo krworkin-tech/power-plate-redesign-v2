@@ -361,3 +361,9 @@ p, li, h3 { text-wrap: pretty; }
 @media (min-width: 768px) { .hero--freq .hero__ctas { margin-top: 64px; } }
 /* 2. "Why Power Plate": the paragraph runs as wide as the headline, two lines on desktop */
 @media (min-width: 901px) { .statement__lede { max-width: none; } }
+
+/* V1 round 3: hero "movement." in the CTA red; the one-second titles stay on one line on desktop */
+.hero__accent { color: var(--red-ui); }
+@media (min-width: 901px) { .b-step h3 { white-space: nowrap; } }
+/* "More from every" stays on one line on phones: the headline scales with the screen instead of wrapping */
+@media (max-width: 767px) { .hero--freq .hero__title { font-size: min(56px, calc((100vw - 40px) / 7.8)); } }
