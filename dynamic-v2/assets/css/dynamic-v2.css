@@ -34,7 +34,7 @@ html[data-hero="7"] .hero--scenes { display: flex; }
 .scene b { display: block; font: 500 18px/1.25 var(--f-display); letter-spacing: -.01em; }
 .scene small { display: block; margin-top: 4px; font-size: 15px; color: inherit; opacity: .8; }
 .scene:focus-visible { outline: 2px solid #fff; outline-offset: 6px; border-radius: 2px; }
-.hero--scenes .scenes__toggle { position: absolute; right: var(--gutter); top: calc(var(--nav-h) + 24px); width: 44px; height: 44px; }
+.hero--scenes .scenes__toggle { width: 48px; height: 48px; align-self: center; } /* desktop: sits in the button row */
 @media (max-width: 767px) {
   .hero--scenes { min-height: max(640px, calc(100svh - var(--promo-h))); } /* tabs sit on the fold under the promo bar */
   .scenes__shade { background: linear-gradient(180deg, rgba(11,13,16,.65) 0%, rgba(11,13,16,.3) 30%, rgba(11,13,16,.9) 55%, rgba(11,13,16,.98) 100%); }
@@ -45,7 +45,7 @@ html[data-hero="7"] .hero--scenes { display: flex; }
   .scene { padding-top: 12px; }
   .scene small { display: none; }
   .scene b { font-size: 13px; line-height: 1.25; }
-  .hero--scenes .scenes__toggle { top: calc(var(--nav-h) + 16px); }
+  .hero--scenes .scenes__toggle { position: absolute; right: var(--gutter); top: calc(var(--nav-h) + 16px); width: 44px; height: 44px; } /* phones: top right, clear of the stacked buttons */
 }
 /* Chat launcher and offer stay out of the hero; they arrive once the next section is in view */
 .ppchat { transition: opacity .35s, transform .35s var(--ease-out), visibility .35s; }
