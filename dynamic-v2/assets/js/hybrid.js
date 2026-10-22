@@ -401,7 +401,7 @@
   const countEl = $('[data-b-count]');
   const bSteps = $$('[data-b-step]');
   if (!hasGsap || reduceMotion) {
-    countEl.textContent = '50';
+    countEl.textContent = '45';
     bSteps.forEach(s => s.classList.add('is-active'));
     return;
   }
@@ -436,7 +436,7 @@
   }
   gsap.from('.b-panel', { opacity: 0, y: 40, duration: 1, stagger: .08, ease: 'expo.out', scrollTrigger: { trigger: '[data-b-panels]', start: 'top 85%', once: true } });
 
-  // Inside one second, pinned: the counter climbs to 50 and the rings speed up with it
+  // Inside one second, pinned: the counter climbs to 45 (the my8 peak) and the rings speed up with it
   const rings = $$('[data-b-ring]');
   const setRingSpeed = rate => rings.forEach(r => r.getAnimations().forEach(a => { a.playbackRate = rate; }));
   const setStepState = p => {
@@ -452,14 +452,14 @@
         onUpdate: self => { setStepState(self.progress); setRingSpeed(.5 + self.progress * 2.5); }
       }
     })
-      .to(c, { v: 50, ease: 'none', duration: .8, onUpdate: () => (countEl.textContent = Math.round(c.v)) }, 0)
+      .to(c, { v: 45, ease: 'none', duration: .8, onUpdate: () => (countEl.textContent = Math.round(c.v)) }, 0)
       .fromTo('.b-second__product', { '--s': .92 }, { '--s': 1.04, ease: 'none', duration: 1 }, 0);
-    return () => { countEl.textContent = '50'; setRingSpeed(1); bSteps.forEach(s => s.classList.add('is-active')); };
+    return () => { countEl.textContent = '45'; setRingSpeed(1); bSteps.forEach(s => s.classList.add('is-active')); };
   });
   mm.add('(max-width: 960px)', () => {
     bSteps.forEach(s => s.classList.add('is-active'));
     const c = { v: 0 };
-    gsap.to(c, { v: 50, duration: 1.6, ease: 'power3.out', onUpdate: () => (countEl.textContent = Math.round(c.v)), scrollTrigger: { trigger: '.b-second__count', start: 'top 85%', once: true } });
+    gsap.to(c, { v: 45, duration: 1.6, ease: 'power3.out', onUpdate: () => (countEl.textContent = Math.round(c.v)), scrollTrigger: { trigger: '.b-second__count', start: 'top 85%', once: true } });
   });
 
   // Goals + finder arrive
