@@ -1,4 +1,13 @@
-/* Dynamic V1 page additions: Frequency hero tuner, Goals (V1) section and the Classic quiz */
+/* Dynamic V1 page additions: header backdrop, Frequency hero tuner, Goals (V1) section and the Classic quiz */
+// Header gets its dark backdrop as soon as the page leaves the top
+(() => {
+  const nav = document.querySelector('[data-nav]');
+  if (!nav) return;
+  const set = () => nav.classList.toggle('is-scrolled', scrollY > 8);
+  addEventListener('scroll', set, { passive: true });
+  set();
+})();
+
 // Tuner: the line vibrates at the chosen frequency; the readout counts to it
 (() => {
   const w1 = document.querySelector('[data-w1]'), w2 = document.querySelector('[data-w2]');

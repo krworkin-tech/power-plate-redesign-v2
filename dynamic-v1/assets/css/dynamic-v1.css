@@ -37,6 +37,8 @@ html[data-hero="5"] .hero--freq { display: flex; }
   .tuner__chips button { flex: 1; padding: 0 8px; }
 }
 @media (prefers-reduced-motion: reduce) { .freq__media .hero__video { animation: none; } }
+/* Header over the hero: clear at the top, dark frosted once the page scrolls, so the hero copy never shows through it */
+.nav.is-scrolled:not(.is-solid) { background: rgba(11,13,16,.78); -webkit-backdrop-filter: saturate(160%) blur(18px); backdrop-filter: saturate(160%) blur(18px); box-shadow: 0 1px 0 rgba(255,255,255,.08); }
 
 /* Goals (V1) */
 .gsec { background: #F0F0F2; color: var(--ink); line-height: 1.5; } /* the standalone section runs on 1.5; the page body uses 1.6 */
