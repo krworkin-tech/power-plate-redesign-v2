@@ -51,6 +51,15 @@
     });
   });
   requestAnimationFrame(tick);
+
+  // Chat launcher: hidden while the hero fills most of the screen (unless the guide is open)
+  const hero = document.querySelector('.hero--scenes'), chat = document.querySelector('.ppchat');
+  if (hero && chat && 'IntersectionObserver' in window) {
+    new IntersectionObserver(([e]) => {
+      const open = chat.querySelector('[aria-expanded=true]');
+      chat.classList.toggle('is-away', e.isIntersecting && !open);
+    }, { rootMargin: '-60% 0px 0px 0px' }).observe(hero); // the hero still reaches the lower 40% of the screen
+  }
 })();
 
 (() => {
