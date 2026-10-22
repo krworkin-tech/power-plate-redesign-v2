@@ -8,9 +8,9 @@ html[data-hero="6"] .hero--cine { display: flex; }
   linear-gradient(180deg, rgba(11,13,16,.55) 0%, rgba(11,13,16,0) 22%),
   radial-gradient(60% 55% at 50% 62%, rgba(11,13,16,.62) 0%, rgba(11,13,16,0) 75%),
   linear-gradient(0deg, rgba(11,13,16,.94) 0%, rgba(11,13,16,.25) 50%, rgba(11,13,16,0) 70%); }
-.cine__inner { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; text-align: center; padding-top: calc(var(--nav-h) + 40px); padding-bottom: 36px; }
+.cine__inner { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding-top: calc(var(--nav-h) + 40px); padding-bottom: 36px; }
 .hero--cine .hero__title { font-size: clamp(52px, 6.4vw, 104px); max-width: none; }
-.hero--cine .hero__lede { max-width: 600px; margin-inline: auto; }
+.hero--cine .hero__lede { max-width: 760px; margin-inline: auto; }
 .hero--cine .hero__ctas { justify-content: center; }
 /* Social proof in place of the tag: five stars and the customer count, on frosted glass */
 .cine__proof { display: inline-flex; align-items: center; gap: 12px; min-height: 40px; padding: 6px 16px 6px 12px; margin-bottom: 24px; border-radius: 999px; background: rgba(20,22,26,.55); border: 1px solid rgba(255,255,255,.18); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); font: 500 15px/1.2 var(--f-body); color: rgba(255,255,255,.88); }
@@ -66,15 +66,13 @@ html[data-hero="6"] .hero--cine { display: flex; }
 /* Header over the hero: clear at the top, dark frosted once the page scrolls, so the hero copy never shows through it */
 .nav.is-scrolled:not(.is-solid) { background: rgba(11,13,16,.78); -webkit-backdrop-filter: saturate(160%) blur(18px); backdrop-filter: saturate(160%) blur(18px); box-shadow: 0 1px 0 rgba(255,255,255,.08); }
 
-/* Logo strip under the hero: one row that loops sideways; hovering holds it */
-.logos { position: relative; padding-block: 32px 36px; background: #fff; border-bottom: 1px solid var(--g-200); overflow: hidden; }
+/* Logo strip under the hero: one row that loops sideways on its own; no hover, click or drag */
+.logos { pointer-events: none; user-select: none; -webkit-user-select: none; position: relative; padding-block: 32px 36px; background: #fff; border-bottom: 1px solid var(--g-200); overflow: hidden; }
 .logos__label { margin-bottom: 20px; text-align: center; font: 500 15px/1.2 var(--f-body); color: var(--text-2); }
 .logos__viewport { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%); }
 .logos__track { display: flex; width: max-content; animation: logos-loop 42s linear infinite; }
-.logos:hover .logos__track { animation-play-state: paused; }
 .logos__row { display: flex; align-items: center; gap: 80px; padding-right: 80px; margin: 0; list-style: none; }
-.logos__row img { display: block; height: 36px; width: auto; max-width: 180px; object-fit: contain; filter: grayscale(1); opacity: .6; mix-blend-mode: multiply; transition: opacity .2s, filter .2s; }
-.logos__row li:hover img { opacity: 1; filter: none; }
+.logos__row img { -webkit-user-drag: none; display: block; height: 36px; width: auto; max-width: 180px; object-fit: contain; filter: grayscale(1); opacity: .6; mix-blend-mode: multiply; transition: opacity .2s, filter .2s; }
 @keyframes logos-loop { to { transform: translateX(-50%); } }
 @media (max-width: 767px) {
   .logos { padding-block: 24px 28px; }
@@ -384,3 +382,14 @@ body.quiz-open { overflow: hidden; }
 .b-footer__bottom .b-footer__social a { width: 44px; height: 44px; min-height: 0; padding: 0; justify-content: center; border-radius: 50%; }
 .b-footer__bottom .b-footer__social svg { width: 20px; height: 20px; }
 @media (max-width: 760px) { .b-footer__bottom .b-footer__social { order: -1; } }
+
+/* V1 edit round: no orphan words anywhere; balanced, even lines in the one-second steps and footnote */
+p, li, h3 { text-wrap: pretty; }
+.b-step p, .b-step h3, .b-second__note { text-wrap: balance; }
+/* 1. Hero: exactly 64px between the paragraph and the button row */
+@media (min-width: 768px) { .hero--freq .hero__ctas { margin-top: 64px; } }
+/* 2. "Why Power Plate": the paragraph runs as wide as the headline, two lines on desktop */
+@media (min-width: 901px) { .statement__lede { max-width: none; } }
+
+/* One-second stage: my8 proportions; the floor ring is anchored to the centre of its plate */
+.b-second__product { --bx: .5; --by: .86; --rx: .8; --ar: 2.4; aspect-ratio: 600 / 1121; }
