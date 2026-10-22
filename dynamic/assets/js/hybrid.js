@@ -506,3 +506,12 @@
 
   addEventListener('load', () => ScrollTrigger.refresh());
 })();
+
+// Header gets its dark backdrop as soon as the page leaves the top
+(() => {
+  const nav = document.querySelector('[data-nav]');
+  if (!nav) return;
+  const set = () => nav.classList.toggle('is-scrolled', scrollY > 8);
+  addEventListener('scroll', set, { passive: true });
+  set();
+})();
