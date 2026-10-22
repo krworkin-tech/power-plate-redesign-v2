@@ -1,0 +1,44 @@
+/* ==========================================================================
+   Power Plate | Dynamic (A + B)
+   Loaded after styles.css and direction-b.css. B supplies the hero, one-second,
+   science, proof, FAQ, closing and footer; A supplies the statement, goals,
+   finder and everyday sections (their styles already live in styles.css).
+   Only the rules that make the two read as one page live here.
+   ========================================================================== */
+
+/* One title size across every section (Direction A's reduced scale) */
+.h2,
+.b-closing__title { font: 500 clamp(36px, 4.2vw, 56px)/1.04 var(--f-display); letter-spacing: -.035em; }
+
+/* Why Power Plate: B's expanding panels sit under A's statement */
+.statement .b-panels { margin-top: var(--sp-20); }
+
+@media (max-width: 760px) {
+  .b-closing__title { font-size: clamp(36px, 4.2vw, 56px); }
+  .statement .b-panels { margin-top: var(--sp-12); }
+
+  /* Phones: centered headings, asides and footnotes, 14px tag pills (as agreed for A and B) */
+  .section-head { text-align: center; }
+  .section-head--row { flex-direction: column; align-items: center; }
+  .section-head--row > div:first-child { flex: none; }
+  .section-head__aside { margin-inline: auto; }
+  .footnote { margin-inline: auto; text-align: center; }
+  .kicker { font-size: 14px; min-height: 36px; padding-right: var(--sp-3); }
+  .kicker svg { width: 20px; height: 20px; }
+}
+
+/* Popular picks: the row spans the full content width, like the footer grid below */
+.b-picks-wrap { max-width: none; }
+.b-picks__title { margin-bottom: var(--sp-6); }
+/* Image panel runs the full card height, name at the top, price on the bottom edge */
+.b-pick { align-items: stretch; }
+.b-pick__img { width: 80px; height: auto; min-height: 80px; }
+.b-pick__img img { inset: auto; left: 8%; top: 50%; width: 84%; height: auto; aspect-ratio: 1; translate: 0 -50%; }
+/* Personal and MOVE shots have the plate in the lower part of a square frame: lift them to the middle */
+.b-pick__img img[src*="Personal_"], .b-pick__img img[src*="MoveRed_"] { translate: 0 -68%; }
+.b-pick__txt { justify-content: space-between; padding-block: var(--sp-1); }
+.b-pick__price { white-space: nowrap; }
+.b-pick__arrow { align-self: center; }
+
+/* Header over the hero: clear at the top, dark frosted once the page scrolls, so the hero copy never shows through it */
+.nav.is-scrolled:not(.is-solid) { background: rgba(11,13,16,.78); -webkit-backdrop-filter: saturate(160%) blur(18px); backdrop-filter: saturate(160%) blur(18px); box-shadow: 0 1px 0 rgba(255,255,255,.08); }

@@ -1,4 +1,4 @@
-/* Dynamic V1 page additions: header backdrop, Frequency hero tuner, Goals (V1) section and the Classic quiz */
+/* Dynamic V1 page additions: header backdrop, hero, goals section (V1) and the Classic quiz */
 // Header gets its dark backdrop as soon as the page leaves the top
 (() => {
   const nav = document.querySelector('[data-nav]');
